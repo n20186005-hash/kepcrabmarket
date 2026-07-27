@@ -1,6 +1,14 @@
+// Centralized domain resolution. Reads the deployment-time env var
+// CURRENT_SITE_DOMAIN; falls back to the canonical domain for this site.
+function resolveBaseUrl(): string {
+  const raw = (process.env.CURRENT_SITE_DOMAIN ?? 'kepcrabmarket.com').trim();
+  const clean = raw.replace(/^https?:\/\//i, '').replace(/\/+$/, '');
+  return `https://${clean}`;
+}
+
 export const siteConfig = {
   name: 'Kep Crab Market',
-  baseUrl: 'https://kepcrabmarket.com',
+  baseUrl: resolveBaseUrl(),
   slug: 'kep-crab-market',
   locales: ['km', 'en', 'zh'] as const,
 };

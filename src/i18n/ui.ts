@@ -1,6 +1,7 @@
 import km from './km.json';
 import en from './en.json';
 import zh from './zh.json';
+import { siteConfig } from '../config/site';
 
 export const defaultLang = 'km';
 export const languagesList = ['km', 'en', 'zh'] as const;
@@ -35,7 +36,7 @@ export function getI18n(url: URL) {
 }
 
 export function buildAlternates(): Record<string, string> {
-  const base = 'https://kepcrabmarket.com';
+  const base = siteConfig.baseUrl;
   return {
     km: `${base}/`,
     en: `${base}/en/`,
