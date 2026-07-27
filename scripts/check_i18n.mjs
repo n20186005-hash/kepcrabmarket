@@ -39,10 +39,10 @@ for (const l of langs) {
   if (n !== 25) { console.log(`[${l}] gallery.alts length = ${n} (expected 25)`); problems++; }
 }
 
-// nav must have 10 entries
+// nav must have 11 entries
 for (const l of langs) {
   const n = Object.keys(data[l].nav).length;
-  if (n !== 10) { console.log(`[${l}] nav keys = ${n} (expected 10)`); problems++; }
+  if (n !== 11) { console.log(`[${l}] nav keys = ${n} (expected 11)`); problems++; }
 }
 
 // touristType present and array
@@ -51,7 +51,7 @@ for (const l of langs) {
 }
 
 if (problems === 0) {
-  console.log('OK: key parity, gallery(25), nav(10), touristType all consistent across km/en/zh.');
+  console.log('OK: key parity, gallery(25), nav(11), touristType all consistent across km/en/zh.');
 } else {
   console.log(`\n${problems} problem(s) found.`);
   process.exit(1);

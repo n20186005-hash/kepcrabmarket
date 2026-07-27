@@ -1,0 +1,18 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const g = messages.glance;
+---
+<div class="sticky top-14 z-40 border-b border-black/5 bg-sky-700 text-white">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-2.5 text-sm">
+    {
+      g.items.map((it: any) => (
+        <div class="flex items-center gap-2">
+          <span class="text-base">{it.icon}</span>
+          <span class="opacity-90">{it.label}:</span>
+          <span class="font-semibold">{it.value}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -24,11 +24,20 @@
       { "label": "Phone", "value": "+855 10 833 168" }
     ]
   },
+  "glance": {
+    "title": "At a Glance",
+    "items": [
+      { "icon": "🕒", "label": "Opening hours", "value": "≈ 05:00–17:30" },
+      { "icon": "🆓", "label": "Entry", "value": "Free" },
+      { "icon": "📞", "label": "Phone", "value": "+855 10 833 168" }
+    ]
+  },
   "nav": {
     "overview": "Overview",
     "about": "About",
     "history": "History",
     "culture": "Culture",
+    "nearby": "Nearby",
     "highlights": "Highlights",
     "besttime": "Best Time",
     "transport": "Getting There",
@@ -79,6 +88,11 @@
         "title": "A calm eco-tourism stop",
         "text": "Peaceful and green, Kep is now known for slow travel, the national park, the islands, and above all its crab market — the place most visitors remember."
       }
+    ],
+    "sourcesNote": "This historical overview is compiled from public sources and may differ in detail. Verify locally before you travel.",
+    "sources": [
+      { "label": "Tourism Cambodia (Ministry of Tourism)", "url": "https://www.tourismcambodia.com" },
+      { "label": "Kep Crab Market on Google Maps", "url": "https://maps.app.goo.gl/yXBZL3FjfpbNFYePA" }
     ]
   },
   "culture": {
@@ -114,6 +128,36 @@
         "Stories told by local vendors mix fact and fondness — some say the crab brings good luck to the fishing families, others simply smile and call it 'the king of Kep'. Whether legend or local pride, it captures the spirit of the place."
       ]
     }
+  },
+  "nearby": {
+    "title": "Nearby Attractions",
+    "intro": "Kep is compact, so the crab market pairs naturally with a few other coastal stops within a short ride.",
+    "items": [
+      {
+        "icon": "🌳",
+        "title": "Kep National Park",
+        "desc": "A green hill park above the bay with a viewpoint, a coastal forest trail, and the old 'Sunset Road'. A short drive from the market.",
+        "distance": "≈ 10 min drive"
+      },
+      {
+        "icon": "🏝️",
+        "title": "Rabbit Island (Koh Tonsay)",
+        "desc": "A quiet island with sandy beaches, reached by a short boat trip from the islands pier. Popular for a half-day swim and relax.",
+        "distance": "Boat from Kep pier"
+      },
+      {
+        "icon": "🌶️",
+        "title": "Kampot pepper farms",
+        "desc": "In nearby Kampot, family farms grow the protected Kampot pepper that defines Kep's famous crab dish. Tours and tastings are available.",
+        "distance": "≈ 40 min from Kep"
+      },
+      {
+        "icon": "🏖️",
+        "title": "Kep Beach",
+        "desc": "A calm public beach near the old resort area, good for a stroll and sunset. Simple and uncrowded compared with bigger beaches.",
+        "distance": "≈ 5 min drive"
+      }
+    ]
   },
   "highlights": {
     "title": "Why Visit",
@@ -438,23 +482,133 @@
     "intro": "This is a non-commercial, independent information guide. We are not affiliated with any vendor, business, or government body in Kep.",
     "privacy": {
       "title": "Privacy Policy",
+      "updated": "Last updated: July 2026",
       "body": [
-        "We do not collect personal information through this website. There are no account systems, contact forms, or analytics that identify you.",
-        "Third-party maps and external links may set their own cookies when opened. We recommend reviewing their policies if this matters to you."
+        {
+          "heading": "Information we collect",
+          "paragraphs": [
+            "We collect only the minimum data necessary to operate and improve this website. This may include:",
+            "Browsing data (IP address, browser type, pages visited); Cookies and similar technologies; Any information you voluntarily provide through a contact form or email."
+          ]
+        },
+        {
+          "heading": "How we use your information",
+          "paragraphs": [
+            "We use the information we collect to:"
+          ],
+          "list": [
+            "Improve website content and user experience",
+            "Analyse traffic and usage patterns",
+            "Respond to requests",
+            "Comply with our legal obligations"
+          ]
+        },
+        {
+          "heading": "Third-party services",
+          "paragraphs": [
+            "Our website may use third-party services such as Google Maps (for embedded maps and location data), Google Analytics (for traffic analysis), and Unsplash (for images). These services have their own privacy policies."
+          ]
+        },
+        {
+          "heading": "Your rights",
+          "paragraphs": [
+            "Under the General Data Protection Regulation (GDPR) and related laws, you have the right to:"
+          ],
+          "list": [
+            "Access your personal data",
+            "Request correction or deletion",
+            "Object to processing",
+            "Lodge a complaint with a supervisory authority"
+          ]
+        }
       ]
     },
     "terms": {
       "title": "Terms of Service",
+      "updated": "Last updated: July 2026",
       "body": [
-        "All content is provided for general information only. We are not responsible for any loss, inconvenience, or decision made based on this guide.",
-        "Always confirm practical details (hours, prices, access) locally, as they can change."
+        {
+          "heading": "Access and use",
+          "paragraphs": [
+            "By accessing and using this website, you agree to be bound by these Terms of Service."
+          ]
+        },
+        {
+          "heading": "Use of content",
+          "paragraphs": [
+            "All content on this website is provided for informational purposes only. We are an independent third-party travel information website and are not affiliated with any tourist attraction, government agency, or commercial operator."
+          ]
+        },
+        {
+          "heading": "Accuracy of information",
+          "paragraphs": [
+            "We strive to provide accurate and up-to-date information, but we cannot guarantee its completeness or accuracy. Itineraries, conditions, and services may change without notice. Always verify important information through official channels before you travel."
+          ]
+        },
+        {
+          "heading": "Intellectual property",
+          "paragraphs": [
+            "The design and original content of this website are protected by copyright. Images are sourced from Unsplash and used under its licence. Use of Google Maps data complies with Google's Terms of Service."
+          ]
+        },
+        {
+          "heading": "Limitation of liability",
+          "paragraphs": [
+            "This website is provided 'as is' without any warranties. We are not liable for any loss arising from the use of the information on this website, including but not limited to travel decisions made based on its content."
+          ]
+        }
       ]
     },
     "cookie": {
       "title": "Cookie Settings",
+      "updated": "Last updated: July 2026",
       "body": [
-        "This site itself does not use tracking cookies. External services such as maps may use cookies under their own terms.",
-        "You can block third-party cookies in your browser settings at any time."
+        {
+          "paragraphs": [
+            "We use cookies to improve your browsing experience. You can manage your preferences below."
+          ]
+        },
+        {
+          "heading": "Essential cookies",
+          "paragraphs": [
+            "These cookies are essential for the website to function and cannot be disabled."
+          ],
+          "note": "Essential cookies — always active"
+        },
+        {
+          "heading": "Analytics cookies",
+          "paragraphs": [
+            "They help us understand how visitors interact with our website by collecting anonymous usage data."
+          ],
+          "list": [
+            "Google Analytics — Active. It collects anonymous information about how visitors use our website."
+          ]
+        },
+        {
+          "heading": "Preference cookies",
+          "paragraphs": [
+            "They remember your settings, such as language and theme preferences."
+          ],
+          "list": [
+            "User preferences — Active. Saves your language preference and site settings."
+          ]
+        },
+        {
+          "heading": "Marketing cookies",
+          "paragraphs": [
+            "They are used to show relevant advertising and measure the effectiveness of advertising campaigns."
+          ],
+          "list": [
+            "Personalised ads — Inactive. It can show relevant ads based on your interests."
+          ]
+        },
+        {
+          "heading": "Managing consent",
+          "paragraphs": [
+            "You can change your cookie settings at any time. Please note that disabling certain cookies may affect the functionality of the website."
+          ],
+          "note": "Save preferences · Reject all"
+        }
       ]
     }
   }
