@@ -8,6 +8,8 @@ const { messages } = getI18n(Astro.url);
 const navItems = [
   { key: 'overview', href: '#overview' },
   { key: 'about', href: '#about' },
+  { key: 'history', href: '#history' },
+  { key: 'culture', href: '#culture' },
   { key: 'highlights', href: '#highlights' },
   { key: 'besttime', href: '#besttime' },
   { key: 'transport', href: '#transport' },
@@ -38,7 +40,7 @@ const siteName = messages.header.siteName;
             href={item.href}
             class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-sky-50 hover:text-sky-700"
           >
-            {messages.header.nav[item.key]}
+            {messages.nav[item.key]}
           </a>
         ))
       }
@@ -68,7 +70,7 @@ const siteName = messages.header.siteName;
             href={item.href}
             class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700"
           >
-            {messages.header.nav[item.key]}
+            {messages.nav[item.key]}
           </a>
         ))
       }

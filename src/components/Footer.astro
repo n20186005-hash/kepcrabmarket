@@ -15,6 +15,8 @@ const prefix = lang === 'km' ? '' : `/${lang}`;
 const navItems = [
   { key: 'overview', href: '#overview' },
   { key: 'about', href: '#about' },
+  { key: 'history', href: '#history' },
+  { key: 'culture', href: '#culture' },
   { key: 'highlights', href: '#highlights' },
   { key: 'besttime', href: '#besttime' },
   { key: 'transport', href: '#transport' },
@@ -60,7 +62,7 @@ const legalLinks = [
           navItems.map((item) => (
             <li>
               <a href={item.href} class="text-sky-100/80 transition hover:text-white">
-                {messages.header.nav[item.key]}
+                {messages.nav[item.key]}
               </a>
             </li>
           ))
