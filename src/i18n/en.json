@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "title": "Kep Crab Market Guide | Seafood Market in Kep Cambodia",
+    "description": "Discover Kep Crab Market in Kep Province, Cambodia. Opening hours, location, how to get there, and practical travel tips for visitors.",
+    "touristType": ["International tourists", "Families", "Photographers"]
+  },
+  "header": {
+    "siteName": "Kep Crab Market",
+    "nav": {
+      "overview": "Overview",
+      "about": "About",
+      "highlights": "Highlights",
+      "besttime": "Best Time",
+      "transport": "Getting There",
+      "facilities": "Facilities",
+      "location": "Location",
+      "faq": "FAQ"
+    }
+  },
+  "hero": {
+    "eyebrow": "Kep Province · Coastal Cambodia",
+    "title": "Kep Crab Market",
+    "enName": "Kep Crab Market",
+    "zhName": "白马螃蟹市场",
+    "subtitle": "One of the most representative seafood culture markets in Cambodia's Kep Province, known for locally caught fresh crab, seafood trading, and a seaside dining experience.",
+    "ctaMap": "View Map",
+    "ctaExplore": "Market Info"
+  },
+  "about": {
+    "title": "About Kep Crab Market",
+    "body": [
+      "Kep Crab Market (Khmer: ផ្សារក្ដាមក្រុងកែប) is a local seafood market in Krong Kaeb, Kep Province, in southern Cambodia.",
+      "The area has a long fishing history, and the market reflects the region's maritime culture, local fishing traditions, and everyday seafood trade.",
+      "For visitors, the market offers a way to experience local daily life and observe the trading of crab and other seafood up close, in an objective and non-commercial setting."
+    ]
+  },
+  "highlights": {
+    "title": "Market Highlights",
+    "intro": "Explore the experiences this market offers to visitors.",
+    "items": [
+      { "icon": "🦀", "title": "Seafood Culture", "desc": "The coastal Kep region has long relied on marine resources, and the local market showcases traditional fishing life." },
+      { "icon": "🛒", "title": "Crab Trading Experience", "desc": "Visitors can observe local residents buying, preparing, and trading seafood products." },
+      { "icon": "🌊", "title": "Seaside Atmosphere", "desc": "Located near the shore, the market lets you feel the everyday life of local residents." },
+      { "icon": "📷", "title": "Photography Experience", "desc": "Great for morning markets, fishing boats, coastal scenery, and documenting local life." }
+    ]
+  },
+  "bestTime": {
+    "title": "Best Time to Visit",
+    "intro": "The market opens daily 05:00 – 17:30. Actual activity may vary with weather, festivals, and season.",
+    "items": [
+      { "icon": "🌅", "title": "Morning (05:00 – 10:00)", "desc": "Seafood is more plentiful, market activity is lively, and the light is good for photography." },
+      { "icon": "🌤️", "title": "Afternoon (15:00 – 17:30)", "desc": "The temperature is lower and the seaside environment is comfortable." }
+    ]
+  },
+  "guide": {
+    "title": "How to Visit",
+    "stay": "Suggested time to spend",
+    "stayDesc": "30 minutes – 2 hours, depending on whether you buy seafood, take photos, or try local food.",
+    "routes": [
+      { "title": "Relaxed Visit", "steps": ["Entrance", "Market area", "Seaside area", "Stroll around"] },
+      { "title": "Photography Route", "steps": ["Morning trading", "Coastline", "Fishing boat area"] }
+    ]
+  },
+  "transport": {
+    "title": "How to Get There",
+    "intro": "This site provides public information only and does not recommend specific private commercial services. Below are examples of common routes; schedules and prices are subject to local conditions.",
+    "routes": [
+      {
+        "icon": "✈️",
+        "title": "From the airport to Kep Crab Market",
+        "desc": "Kep has no nearby airport; the closest major international airport is Phnom Penh International Airport (PNH). Suggested route:",
+        "steps": [
+          "Arrive at Phnom Penh International Airport, complete immigration and collect luggage",
+          "Take a taxi or pre-arranged hired car outside the terminal",
+          "Travel along the national highway to Kampot, then continue to Kep",
+          "In Kep town, walk, take a Tuk Tuk, or ride a motorbike to the crab market"
+        ]
+      },
+      {
+        "icon": "🚌",
+        "title": "From Phnom Penh (bus / public transport)",
+        "desc": "An economical public option:",
+        "steps": [
+          "Go to a long-distance bus station in Phnom Penh",
+          "Take a bus bound for Kep (or via Kampot)",
+          "After arriving in Kep, transfer to a Tuk Tuk or motorbike to the market",
+          "Total about 3–4 hours, depending on the bus schedule"
+        ]
+      },
+      {
+        "icon": "🚗",
+        "title": "From Phnom Penh (private car / hired car)",
+        "desc": "Flexible, suitable for families or groups:",
+        "steps": [
+          "Depart Phnom Penh via NH2 / NH3 highway heading south",
+          "Pass through Kampot, then turn onto the road to Kep",
+          "Navigate to Kep Crab Market or nearby parking",
+          "Total about 2.5–3.5 hours (depending on traffic and road conditions)"
+        ]
+      },
+      {
+        "icon": "🛵",
+        "title": "From central Kep town",
+        "desc": "The market is within Kep town and not far:",
+        "steps": [
+          "If staying near the market, simply walk there",
+          "Ride a motorbike or e-scooter along the main road",
+          "Hail a Tuk Tuk in town and tell the driver you want the crab market",
+          "Take a taxi / hired car, suitable for families with luggage"
+        ]
+      }
+    ]
+  },
+  "facilities": {
+    "title": "Nearby Public Facilities",
+    "intro": "Information to meet visitor needs. This site does not name specific businesses.",
+    "items": [
+      { "icon": "🚻", "title": "Restrooms (WC)", "desc": "Sanitary facilities may be available at the market and nearby public areas. Visitors should confirm availability in advance." },
+      { "icon": "♿", "title": "Accessibility", "desc": "Traditional market environments may have uneven ground, narrow passages, and peak-hour crowds. Visitors with limited mobility should plan routes ahead and avoid peak times." },
+      { "icon": "🚗", "title": "Parking", "desc": "Motorbike parking and small vehicle spaces are usually available nearby. Demand may increase during holidays." },
+      { "icon": "🍜", "title": "Dining", "desc": "The area may offer seafood, local specialties, and drinks or snacks. This site does not recommend any specific restaurant." },
+      { "icon": "🏨", "title": "Accommodation", "desc": "Kep offers seaside stays, town stays, guesthouses, and resort-style lodging. No hotel ranking is provided." },
+      { "icon": "🛒", "title": "Shops", "desc": "Nearby you may find daily-goods stores, food stalls, and travel supplies." },
+      { "icon": "⛽", "title": "Fuel & Charging", "desc": "Within Kep town you can usually find traditional fuel stations and basic vehicle services. EV users should confirm charging options in advance." }
+    ]
+  },
+  "weather": {
+    "title": "Weather & Travel Tips",
+    "intro": "Kep has a tropical climate.",
+    "items": [
+      { "icon": "🌊", "title": "Coastal weather", "desc": "The coast brings cooling breezes, but be mindful of strong midday sun." },
+      { "icon": "🌧️", "title": "Rainy season", "desc": "More rainfall and changing sea conditions. Market activity may occasionally slow down." },
+      { "icon": "☀️", "title": "Dry season", "desc": "Good for outdoor activities and coastal photography." }
+    ]
+  },
+  "tips": {
+    "title": "Visitor Tips",
+    "items": [
+      { "icon": "🤝", "title": "Respect locals", "desc": "Keep a friendly attitude and respect local culture." },
+      { "icon": "💰", "title": "Confirm prices before buying", "desc": "Agree on the price before purchasing any seafood." },
+      { "icon": "👜", "title": "Watch your belongings", "desc": "Markets get crowded; keep an eye on bags and phones." },
+      { "icon": "🚧", "title": "Avoid blocking trade", "desc": "Do not obstruct passages or interfere with market activities." },
+      { "icon": "🌿", "title": "Protect the environment", "desc": "Respect nature and keep the coast clean." },
+      { "icon": "♻️", "title": "Reduce plastic waste", "desc": "Help cut plastic use by bringing a reusable bag." }
+    ]
+  },
+  "map": {
+    "title": "Location Map",
+    "caption": "Kep Crab Market · Krong Kaeb, Kep Province, Cambodia"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "intro": "Glimpses of the market, local life, and the coastal atmosphere of Kep. All images are the property of their photographers.",
+    "alts": [
+      "Kep Crab Market in the morning",
+      "Stalls selling fresh crab",
+      "Seafood products at the market",
+      "Local fishermen",
+      "Customers buying seafood",
+      "Kep coastline near the market",
+      "Fishing boats at the shore",
+      "Scenery of Kep town",
+      "Local trading activity",
+      "Local seafood dishes",
+      "Market entrance",
+      "Kep seaside atmosphere"
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      { "q": "What are the opening hours of Kep Crab Market?", "a": "The market is generally open daily from about 05:00 to 17:30. Activity may vary with weather and season." },
+      { "q": "Is entry to the market free?", "a": "Yes, entering the market area is generally free. You only pay for what you buy or eat." },
+      { "q": "How do I get there?", "a": "You can reach it on foot, by motorbike, Tuk Tuk, or car from within Kep town, or from Phnom Penh via Kampot." },
+      { "q": "Is it suitable for families?", "a": "Yes, the market is an open public space suitable for families and photographers who want to experience local life." }
+    ]
+  },
+  "footer": {
+    "siteName": "Kep Crab Market",
+    "tagline": "An independent non-profit visitor information guide — no sales, no advertising, no commercial recommendations.",
+    "disclaimer": "This website is an independent non-profit visitor information project with no affiliation to any government agency or official organization. Information is compiled from public sources relating to Kep Province and Cambodian tourism, with no commercial recommendations. All images on this site are the property and copyright of their respective photographers.",
+    "rights": "© {year} Kep Crab Market Guide. Non-commercial visitor information.",
+    "navTitle": "Sections",
+    "langTitle": "Language",
+    "links": {
+      "maps": "View on Google Maps",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookie": "Cookie Settings"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": [
+      { "h": "Information we collect", "p": "This is a static educational site. We do not collect personal information from users. Any analytics, if enabled, are anonymous and aggregated." },
+      { "h": "Non-commercial project", "p": "We do not sell, trade, or share user information with third parties." },
+      { "h": "Third-party links", "p": "The site may link to Google Maps, which is governed by their own privacy policy." }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "sections": [
+      { "h": "Use of content", "p": "The content of this site is provided for general reference only and is not official advice." },
+      { "h": "Verification", "p": "Please verify opening hours, location, and details before traveling, as they may change." },
+      { "h": "Limitation of liability", "p": "The site is not liable for any loss or damage arising from the use of the information provided." }
+    ]
+  },
+  "cookie": {
+    "title": "Cookie Settings",
+    "intro": "This site uses cookies to improve your experience. You can accept or decline them.",
+    "sections": [
+      { "h": "Essential cookies", "p": "Required for basic site functions such as remembering your language preference." },
+      { "h": "Analytics cookies", "p": "If enabled, these help us understand how visitors use the site, without identifying individuals." }
+    ]
+  }
+}

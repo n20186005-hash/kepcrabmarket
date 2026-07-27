@@ -1,0 +1,22 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const faq = messages.faq;
+---
+<section id="faq" class="mx-auto max-w-3xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-gray-900">{faq.title}</h2>
+
+  <div class="mt-8 space-y-3">
+    {
+      faq.items.map((item: any) => (
+        <details class="group rounded-2xl border border-black/5 bg-white px-5 py-4 shadow-sm [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-gray-900">
+            <span>{item.q}</span>
+            <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-sky-50 text-sky-700 transition group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-sm text-gray-600 leading-relaxed">{item.a}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>

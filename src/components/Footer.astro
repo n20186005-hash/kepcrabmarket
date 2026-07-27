@@ -1,0 +1,105 @@
+---
+import { getLangFromUrl, getI18n, langOrder } from '../i18n/ui';
+import { languages } from '../i18n/ui';
+import { attraction } from '../config/site';
+
+const lang = getLangFromUrl(Astro.url);
+const { messages } = getI18n(Astro.url);
+const f = messages.footer;
+
+const year = new Date().getFullYear();
+const rights = f.rights.replace('{year}', String(year));
+
+const prefix = lang === 'km' ? '' : `/${lang}`;
+
+const navItems = [
+  { key: 'overview', href: '#overview' },
+  { key: 'about', href: '#about' },
+  { key: 'highlights', href: '#highlights' },
+  { key: 'besttime', href: '#besttime' },
+  { key: 'transport', href: '#transport' },
+  { key: 'facilities', href: '#facilities' },
+  { key: 'location', href: '#location' },
+  { key: 'faq', href: '#faq' },
+];
+
+const langHrefs: Record<string, string> = {
+  km: '/',
+  en: '/en/',
+  zh: '/zh/',
+};
+
+const legalLinks = [
+  { key: 'privacy', href: `${prefix}/privacy-policy` },
+  { key: 'terms', href: `${prefix}/terms-of-service` },
+  { key: 'cookie', href: `${prefix}/cookie-settings` },
+];
+---
+<footer class="mt-8 bg-sky-950 text-sky-50">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-2">
+      <div class="flex items-center gap-2 font-bold text-white">
+        <span class="grid h-8 w-8 place-items-center rounded-lg bg-amber-500 text-sky-950">🦀</span>
+        <span>{f.siteName}</span>
+      </div>
+      <p class="mt-4 max-w-md text-sm text-sky-100/80">{f.tagline}</p>
+      <a
+        href={attraction.mapsUrl}
+        target="_blank"
+        rel="noopener"
+        class="mt-5 inline-flex items-center gap-2 rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-sky-950 transition hover:bg-amber-400"
+      >
+        🗺️ {f.links.maps}
+      </a>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-sky-200">{f.navTitle}</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href} class="text-sky-100/80 transition hover:text-white">
+                {messages.header.nav[item.key]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-sky-200">{f.langTitle}</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          langOrder.map((l) => (
+            <li>
+              <a href={langHrefs[l]} hreflang={l} class="text-sky-100/80 transition hover:text-white">
+                {languages[l]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <h3 class="mt-6 text-sm font-semibold uppercase tracking-wide text-sky-200">{f.links.terms}</h3>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          legalLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-sky-100/80 transition hover:text-white">
+                {f.links[link.key]}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-sky-100/70">
+      <p>{f.disclaimer}</p>
+      <p class="mt-3">{rights}</p>
+    </div>
+  </div>
+</footer>

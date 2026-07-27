@@ -1,0 +1,38 @@
+---
+import { getI18n } from '../i18n/ui';
+import { attraction } from '../config/site';
+const { messages } = getI18n(Astro.url);
+const m = messages.map;
+const mapText = messages.footer.links.maps;
+---
+<section id="location" class="mx-auto max-w-6xl px-4 py-14">
+  <div class="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-xl shadow-sky-900/5">
+    <div class="p-6 sm:p-8">
+      <h2 class="text-3xl font-bold text-gray-900">{m.title}</h2>
+      <p class="mt-2 text-gray-600">{m.caption}</p>
+    </div>
+    <div class="aspect-[16/9] w-full">
+      <iframe
+        src={attraction.embedUrl}
+        title={m.caption}
+        class="h-full w-full border-0"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="flex flex-col gap-3 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+      <p class="text-sm text-gray-500">
+        📌 {attraction.lat}, {attraction.lng}
+      </p>
+      <a
+        href={attraction.mapsUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800"
+      >
+        🗺️ {mapText}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Khmer", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1f2937;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Coastal brand helpers */
+.bg-ocean {
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(56, 189, 248, 0.45) 0%, rgba(3, 105, 161, 0.95) 55%, rgba(8, 47, 73, 1) 100%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}

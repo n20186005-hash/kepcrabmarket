@@ -1,0 +1,22 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const t = messages.tips;
+---
+<section id="tips" class="mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-gray-900">{t.title}</h2>
+
+  <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      t.items.map((item: any) => (
+        <div class="flex gap-4 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-6">
+          <span class="text-2xl" aria-hidden="true">{item.icon}</span>
+          <div>
+            <h3 class="text-base font-semibold text-gray-900">{item.title}</h3>
+            <p class="mt-2 text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

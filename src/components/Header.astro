@@ -1,0 +1,95 @@
+---
+import { getLangFromUrl, getI18n } from '../i18n/ui';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const { messages } = getI18n(Astro.url);
+
+const navItems = [
+  { key: 'overview', href: '#overview' },
+  { key: 'about', href: '#about' },
+  { key: 'highlights', href: '#highlights' },
+  { key: 'besttime', href: '#besttime' },
+  { key: 'transport', href: '#transport' },
+  { key: 'facilities', href: '#facilities' },
+  { key: 'location', href: '#location' },
+  { key: 'faq', href: '#faq' },
+];
+
+const langHrefs: Record<string, string> = {
+  km: '/',
+  en: '/en/',
+  zh: '/zh/',
+};
+
+const siteName = messages.header.siteName;
+---
+<header class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+    <a href={langHrefs[lang]} class="flex items-center gap-2 font-bold text-sky-700">
+      <span class="grid h-8 w-8 place-items-center rounded-lg bg-sky-700 text-white">🦀</span>
+      <span class="text-sm leading-tight sm:text-base">{siteName}</span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-sky-50 hover:text-sky-700"
+          >
+            {messages.header.nav[item.key]}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-1">
+      <LanguageSwitcher lang={lang} />
+
+      <button
+        id="menu-toggle"
+        class="ml-1 grid h-9 w-9 place-items-center rounded-lg text-gray-700 hover:bg-sky-50 md:hidden"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="hidden border-t border-black/5 bg-white md:hidden" aria-label="Mobile">
+    <div class="mx-auto flex max-w-6xl flex-col px-4 py-2">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700"
+          >
+            {messages.header.nav[item.key]}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('menu-toggle');
+    var menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function () {
+      var open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>

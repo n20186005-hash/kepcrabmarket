@@ -1,0 +1,103 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n } from '../i18n/ui';
+import { ogLocale, siteConfig, attraction } from '../config/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const htmlLang = htmlLangAttr(lang);
+const alts = buildAlternates();
+const canonical = alts[lang] ?? alts.km;
+const { messages } = getI18n(Astro.url);
+const pageTitle = title ?? messages.meta.title;
+const pageDesc = description ?? messages.meta.description;
+const attractionName = messages.header.siteName;
+const year = new Date().getFullYear();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: attractionName,
+  description: pageDesc,
+  url: canonical,
+  image: `${siteConfig.baseUrl}/gallery/kep-crab-market-1.jpg`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Kep Crab Market',
+    addressLocality: 'Krong Kaeb',
+    addressRegion: 'Kep Province',
+    addressCountry: attraction.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: attraction.lat,
+    longitude: attraction.lng,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: attraction.hoursOpen,
+      closes: attraction.hoursClose,
+    },
+  ],
+  telephone: attraction.phone,
+  isAccessibleForFree: true,
+  touristType: messages.meta.touristType ?? [],
+  aggregateRating: undefined,
+  sameAs: [attraction.mapsUrl],
+};
+---
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="km" href={alts.km} />
+    <link rel="alternate" hreflang="en" href={alts.en} />
+    <link rel="alternate" hreflang="zh" href={alts.zh} />
+    <link rel="alternate" hreflang="x-default" href={alts.xDefault} />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale[lang] ?? lang} />
+    <meta property="og:image" content={`${siteConfig.baseUrl}/gallery/kep-crab-market-1.jpg`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`${siteConfig.baseUrl}/gallery/kep-crab-market-1.jpg`} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen antialiased">
+    <a href="#overview" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-sky-700 focus:px-4 focus:py-2 focus:text-white">
+      {messages.header.nav.overview}
+    </a>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

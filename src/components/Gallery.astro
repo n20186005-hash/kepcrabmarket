@@ -1,0 +1,30 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const g = messages.gallery;
+const base = 'https://kepcrabmarket.com';
+---
+<section id="gallery" class="bg-sky-50/60">
+  <div class="mx-auto max-w-6xl px-4 py-14">
+    <h2 class="text-3xl font-bold text-gray-900">{g.title}</h2>
+    <p class="mt-2 max-w-2xl text-gray-600">{g.intro}</p>
+
+    <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      {
+        g.alts.map((alt: string, i: number) => (
+          <div class="group overflow-hidden rounded-2xl bg-white ring-1 ring-black/5">
+            <img
+              src={`/gallery/kep-crab-market-${i + 1}.jpg`}
+              alt={alt}
+              width="400"
+              height="300"
+              loading="lazy"
+              decoding="async"
+              class="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
