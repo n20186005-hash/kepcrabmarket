@@ -1,0 +1,73 @@
+---
+import { getI18n } from '../i18n/ui';
+import { attraction } from '../config/site';
+const { messages } = getI18n(Astro.url);
+const r = messages.reviews;
+
+// Rating snapshot cited from the Google Maps listing. Rendered as visible page
+// content only — it is intentionally NOT emitted as aggregateRating / review
+// structured data (see BaseLayout.astro).
+const ratingText = attraction.rating.toFixed(1);
+const ratingPct = `${Math.max(0, Math.min(100, (attraction.rating / 5) * 100))}%`;
+const reviewCount = attraction.reviewCount.toLocaleString('en-US');
+---
+<section id="reviews" class="mx-auto max-w-6xl px-4 py-14">
+  <div class="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-sm">
+    <div class="p-6 sm:p-10">
+      <h2 class="text-3xl font-bold text-gray-900">{r.title}</h2>
+      <p class="mt-2 max-w-3xl text-gray-600">{r.intro}</p>
+
+      <div class="mt-8 flex flex-wrap items-end gap-x-10 gap-y-6">
+        <div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-5xl font-extrabold leading-none text-sky-900">{ratingText}</span>
+            <span class="text-sm text-gray-500">{r.outOf}</span>
+          </div>
+          <div class="mt-2 flex items-center gap-2">
+            <span class="relative inline-block text-xl leading-none" aria-hidden="true">
+              <span class="text-gray-300">★★★★★</span>
+              <span class="absolute inset-0 overflow-hidden text-amber-500" style={`width:${ratingPct}`}
+                >★★★★★</span
+              >
+            </span>
+            <span class="text-xs font-medium text-gray-500">{r.ratingLabel}</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-3xl font-extrabold leading-none text-gray-900">{reviewCount}</div>
+          <div class="mt-2 text-xs font-medium text-gray-500">{r.countLabel}</div>
+        </div>
+
+        <div>
+          <div class="text-xl font-semibold leading-none text-gray-900">{attraction.category}</div>
+          <div class="mt-2 text-xs font-medium text-gray-500">{r.categoryLabel}</div>
+        </div>
+      </div>
+
+      <a
+        href={attraction.mapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 block w-fit text-[11px] font-medium leading-relaxed text-sky-700 underline decoration-sky-300 underline-offset-2 transition hover:text-sky-900"
+      >
+        {r.syncLine}
+      </a>
+
+      <p class="mt-6 max-w-3xl rounded-2xl bg-sky-50 px-4 py-3 text-xs leading-relaxed text-sky-900">
+        {r.sourceNote}
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <a
+          href={attraction.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800"
+        >
+          ⭐ {r.button}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

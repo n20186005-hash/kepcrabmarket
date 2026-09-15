@@ -23,6 +23,13 @@ export function getLangFromUrl(url: URL): string {
   return (languagesList as readonly string[]).includes(lang) ? lang : defaultLang;
 }
 
+/** Messages for an explicit locale code (used by on-demand server islands that
+ *  cannot read the page URL). */
+export function getMessagesByLang(lang: string | undefined) {
+  const key = (languagesList as readonly string[]).includes(lang ?? '') ? (lang as string) : defaultLang;
+  return { lang: key, messages: ui[key] };
+}
+
 export function getI18n(url: URL) {
   const lang = getLangFromUrl(url);
   const messages = ui[lang];
@@ -35,13 +42,36 @@ export function getI18n(url: URL) {
   return { lang, messages, t };
 }
 
-export function buildAlternates(): Record<string, string> {
-  const base = siteConfig.baseUrl;
+/** The current URL's path with its locale prefix stripped, so
+ *  "/en/privacy-policy/" and "/privacy-policy/" both yield "privacy-policy". */
+export function pathWithoutLang(url: URL): string {
+  const segments = url.pathname.split('/').filter(Boolean);
+  if ((languagesList as readonly string[]).includes(segments[0])) segments.shift();
+  return segments.join('/');
+}
+
+/** Absolute URL of `path` in a given language. The default locale is served
+ *  from the root (see `prefixDefaultLocale: false`), the others behind a prefix. */
+export function localisedUrl(lang: string, path = ''): string {
+  const tail = path.replace(/^\/+|\/+$/g, '');
+  const prefix = lang === defaultLang ? '' : `${lang}/`;
+  return `${siteConfig.baseUrl}/${prefix}${tail ? `${tail}/` : ''}`;
+}
+
+/**
+ * hreflang map for one page — every language that actually has that page, plus
+ * an x-default. Taking the page path as an argument is what keeps sub-pages
+ * from declaring the home page as their alternate.
+ */
+export function buildAlternates(path = ''): Record<string, string> {
   return {
-    km: `${base}/`,
-    en: `${base}/en/`,
-    zh: `${base}/zh/`,
-    xDefault: `${base}/`,
+    km: localisedUrl('km', path),
+    en: localisedUrl('en', path),
+    zh: localisedUrl('zh', path),
+    // Pointed at English rather than Khmer: x-default serves the visitors whose
+    // language matches none of the three, and those are almost all arriving
+    // from outside Cambodia.
+    xDefault: localisedUrl('en', path),
   };
 }
 

@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { getI18n } from '../i18n/ui';
+import { galleryImages } from '../lib/gallery';
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
 ---
@@ -12,11 +14,13 @@ const g = messages.gallery;
       {
         g.alts.map((alt: string, i: number) => (
           <div class="group overflow-hidden rounded-2xl bg-white ring-1 ring-black/5">
-            <img
-              src={`/gallery/kep-crab-market-${i + 1}.jpg`}
+            <Image
+              src={galleryImages[i]}
               alt={alt}
-              width="400"
-              height="300"
+              widths={[320, 480, 720]}
+              sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 45vw"
+              format="webp"
+              quality={72}
               loading="lazy"
               decoding="async"
               class="h-44 w-full object-cover transition duration-300 group-hover:scale-105"

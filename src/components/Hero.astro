@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { getI18n } from '../i18n/ui';
+import { heroPhoto } from '../lib/gallery';
 const { messages } = getI18n(Astro.url);
 const hero = messages.hero;
 ---
@@ -9,23 +11,23 @@ const hero = messages.hero;
 
   <div class="relative mx-auto flex max-w-6xl flex-col items-center px-4 pb-20 pt-28 text-center sm:pt-32">
     <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium tracking-wide text-sky-100 backdrop-blur">
-      🦀 {hero.eyebrow}
+      🦀 {hero.badge}
     </p>
     <h1 class="text-balance text-4xl font-extrabold leading-tight sm:text-6xl">
       {hero.title}
     </h1>
     <p class="mt-3 text-sm font-medium tracking-wide text-sky-100/90 sm:text-base">
-      {hero.enName} · {hero.zhName}
+      {hero.subtitle}
     </p>
     <p class="mt-6 max-w-2xl text-balance text-base text-white/80 sm:text-lg">
-      {hero.subtitle}
+      {hero.tagline}
     </p>
     <div class="mt-9 flex flex-col gap-3 sm:flex-row">
       <a
         href="#location"
         class="inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-sky-950 shadow-lg shadow-amber-500/20 transition hover:bg-amber-400"
       >
-        📍 {hero.ctaMap}
+        📍 {hero.cta}
       </a>
       <a
         href="#about"
@@ -34,6 +36,22 @@ const hero = messages.hero;
         🦀 {hero.ctaExplore}
       </a>
     </div>
+
+    <!-- Entity-bound hero visual: alt text carries the attraction name + city + country. -->
+    <figure class="mt-10 w-full max-w-3xl overflow-hidden rounded-3xl border border-white/15 bg-white/5 shadow-2xl shadow-sky-950/30">
+      <Image
+        src={heroPhoto}
+        alt={hero.imageAlt}
+        widths={[640, 1024, 1440]}
+        sizes="(min-width: 768px) 768px, 100vw"
+        format="webp"
+        quality={78}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="h-56 w-full object-cover sm:h-80"
+      />
+    </figure>
   </div>
 
   <div class="relative h-10 w-full overflow-hidden text-slate-50">

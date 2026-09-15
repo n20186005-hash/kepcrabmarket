@@ -1,23 +1,82 @@
 ---
 import { getI18n } from '../i18n/ui';
-const { messages } = getI18n(Astro.url);
+import WeatherLive from './WeatherLive.astro';
+const { lang, messages } = getI18n(Astro.url);
 const w = messages.weather;
+const s = w.seasonal;
 ---
 <section id="weather" class="bg-sky-50/60">
   <div class="mx-auto max-w-6xl px-4 py-14">
     <h2 class="text-3xl font-bold text-gray-900">{w.title}</h2>
-    <p class="mt-2 max-w-2xl text-gray-600">{w.intro}</p>
+    <p class="mt-2 max-w-3xl text-gray-600">{w.intro}</p>
 
-    <div class="mt-8 grid gap-5 sm:grid-cols-3">
+    <!-- Live conditions: rendered on demand in the edge runtime, the rest of the
+         page stays prerendered. -->
+    <div class="mt-8">
+      <WeatherLive locale={lang} server:defer>
+        <div slot="fallback" class="rounded-3xl border border-black/5 bg-white p-6 shadow-sm sm:p-8">
+          <div class="h-5 w-56 animate-pulse rounded bg-gray-100"></div>
+          <div class="mt-6 h-12 w-40 animate-pulse rounded bg-gray-100"></div>
+          <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div class="h-10 animate-pulse rounded bg-gray-100"></div>
+            <div class="h-10 animate-pulse rounded bg-gray-100"></div>
+            <div class="h-10 animate-pulse rounded bg-gray-100"></div>
+            <div class="h-10 animate-pulse rounded bg-gray-100"></div>
+          </div>
+        </div>
+      </WeatherLive>
+    </div>
+
+    {/* Standing climate notes — useful regardless of today's readings. */}
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {
         w.items.map((item: any) => (
           <div class="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
-            <div class="text-3xl">{item.icon}</div>
+            <div class="text-3xl" aria-hidden="true">{item.icon}</div>
             <h3 class="mt-4 text-lg font-semibold text-gray-900">{item.title}</h3>
-            <p class="mt-2 text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">{item.desc}</p>
           </div>
         ))
       }
+    </div>
+
+    <!-- Seasonal strategy table ------------------------------------------- -->
+    <div class="mt-12 rounded-3xl border border-black/5 bg-white p-6 shadow-sm sm:p-8">
+      <h3 class="text-2xl font-bold text-gray-900">{s.title}</h3>
+      <p class="mt-2 max-w-3xl text-gray-600">{s.intro}</p>
+
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full min-w-[52rem] border-collapse text-left text-sm">
+          <caption class="sr-only">{s.title}</caption>
+          <thead>
+            <tr class="border-b border-gray-200 text-xs uppercase tracking-wide text-gray-500">
+              <th scope="col" class="py-3 pr-4 font-semibold">{s.columns.season}</th>
+              <th scope="col" class="py-3 pr-4 font-semibold">{s.columns.climate}</th>
+              <th scope="col" class="py-3 pr-4 font-semibold">{s.columns.water}</th>
+              <th scope="col" class="py-3 pr-4 font-semibold">{s.columns.wildlife}</th>
+              <th scope="col" class="py-3 font-semibold">{s.columns.advice}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              s.rows.map((row: any) => (
+                <tr class="border-b border-gray-100 align-top last:border-0">
+                  <th scope="row" class="py-4 pr-4 font-semibold text-gray-900">
+                    <span class="block text-base">{row.season}</span>
+                    <span class="mt-0.5 block text-xs font-normal text-sky-700">{row.months}</span>
+                  </th>
+                  <td class="py-4 pr-4 leading-relaxed text-gray-600">{row.climate}</td>
+                  <td class="py-4 pr-4 leading-relaxed text-gray-600">{row.water}</td>
+                  <td class="py-4 pr-4 leading-relaxed text-gray-600">{row.wildlife}</td>
+                  <td class="py-4 leading-relaxed text-gray-600">{row.advice}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-5 rounded-2xl bg-gray-50 px-4 py-3 text-xs leading-relaxed text-gray-600">{s.note}</p>
     </div>
   </div>
 </section>

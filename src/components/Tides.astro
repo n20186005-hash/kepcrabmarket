@@ -1,0 +1,63 @@
+---
+import { getI18n } from '../i18n/ui';
+import TidesLive from './TidesLive.astro';
+const { lang, messages } = getI18n(Astro.url);
+const t = messages.tides;
+const g = t.guide;
+const terms = t.terms;
+---
+<section id="tides" class="mx-auto max-w-6xl px-4 py-14">
+  <h2 class="text-3xl font-bold text-gray-900">{t.title}</h2>
+  <p class="mt-2 max-w-3xl text-gray-600">{t.intro}</p>
+
+  <!-- Live predictions: rendered on demand in the edge runtime, the rest of the
+       page stays prerendered. -->
+  <div class="mt-8">
+    <TidesLive locale={lang} server:defer>
+      <div slot="fallback" class="rounded-3xl border border-black/5 bg-white p-6 shadow-sm sm:p-8">
+        <div class="h-5 w-52 animate-pulse rounded bg-gray-100"></div>
+        <div class="mt-6 flex flex-wrap gap-x-8 gap-y-5">
+          <div class="h-14 w-36 animate-pulse rounded bg-gray-100"></div>
+          <div class="h-10 w-28 animate-pulse rounded bg-gray-100"></div>
+          <div class="h-10 w-28 animate-pulse rounded bg-gray-100"></div>
+        </div>
+        <div class="mt-8 h-48 animate-pulse rounded-2xl bg-gray-100"></div>
+      </div>
+    </TidesLive>
+  </div>
+
+  <!-- Standing guidance — true every day, whatever the prediction says. -->
+  <h3 class="mt-12 text-2xl font-bold text-gray-900">{g.title}</h3>
+  <p class="mt-2 max-w-3xl text-gray-600">{g.intro}</p>
+
+  <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      g.items.map((item: any) => (
+        <div class="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+          <div class="text-3xl" aria-hidden="true">{item.icon}</div>
+          <h4 class="mt-4 text-lg font-semibold text-gray-900">{item.title}</h4>
+          <p class="mt-2 text-sm leading-relaxed text-gray-600">{item.desc}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Glossary ------------------------------------------------------------ -->
+  <div class="mt-12 rounded-3xl border border-black/5 bg-white p-6 shadow-sm sm:p-8">
+    <h3 class="text-2xl font-bold text-gray-900">{terms.title}</h3>
+    <p class="mt-2 max-w-3xl text-gray-600">{terms.intro}</p>
+
+    <dl class="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+      {
+        terms.rows.map((row: any) => (
+          <div class="border-t border-gray-100 pt-4">
+            <dt class="text-sm font-semibold text-gray-900">{row.term}</dt>
+            <dd class="mt-1 text-sm leading-relaxed text-gray-600">{row.desc}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p class="mt-6 rounded-2xl bg-gray-50 px-4 py-3 text-xs leading-relaxed text-gray-600">{t.note}</p>
+  </div>
+</section>

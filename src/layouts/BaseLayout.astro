@@ -2,8 +2,9 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n } from '../i18n/ui';
-import { ogLocale, siteConfig, attraction } from '../config/site';
+import MobileActions from '../components/MobileActions.astro';
+import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n, pathWithoutLang } from '../i18n/ui';
+import { ogLocale, siteConfig, attraction, heroImage, jsonLdImages } from '../config/site';
 
 interface Props {
   title?: string;
@@ -13,26 +14,60 @@ interface Props {
 const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const htmlLang = htmlLangAttr(lang);
-const alts = buildAlternates();
+// Canonical and hreflang come from the page's own path, so sub-pages such as
+// /en/privacy-policy/ point at themselves in every language instead of all
+// claiming the home page as their canonical.
+const pagePath = pathWithoutLang(Astro.url);
+const alts = buildAlternates(pagePath);
 const canonical = alts[lang] ?? alts.km;
+const isHome = pagePath === '';
 const { messages } = getI18n(Astro.url);
 const pageTitle = title ?? messages.meta.title;
 const pageDesc = description ?? messages.meta.description;
-const attractionName = messages.header.siteName;
+// Entity description used inside structured data only (keeps the SERP snippet
+// and the Knowledge Graph node described in a consistent way).
+const entityDesc = messages.meta.entityDescription ?? pageDesc;
+const ogTitle = messages.meta.ogTitle ?? pageTitle;
+const ogDesc = messages.meta.ogDescription ?? pageDesc;
+const ogImageAlt = messages.meta.ogImageAlt ?? attraction.fullName;
 const year = new Date().getFullYear();
 
-const jsonLd = {
+// ---------------------------------------------------------------------------
+// 1. Structured data — TouristAttraction.
+// Binds the domain to the physical Google Maps entity: @id anchors the node in
+// the Knowledge Graph, image[] feeds rich result cards, sameAs only links to
+// authoritative profiles.
+// NOTE: aggregateRating / review are deliberately NOT emitted. The rating
+// snapshot shown on the page is a Google Maps citation and stays out of
+// structured data to remain compliant with Google's review snippet guidelines.
+// ---------------------------------------------------------------------------
+const jsonLd: Record<string, any> = {
   '@context': 'https://schema.org',
   '@type': 'TouristAttraction',
-  name: attractionName,
-  description: pageDesc,
+  '@id': `${siteConfig.baseUrl}/#attraction`,
+  name: attraction.fullName,
+  alternateName: [
+    ...new Set(
+      [
+        attraction.shortName,
+        ...attraction.searchAliases,
+        attraction.localName,
+        attraction.zhName,
+      ].filter((name) => name && name !== attraction.fullName),
+    ),
+  ],
+  description: entityDesc,
   url: canonical,
-  image: `${siteConfig.baseUrl}/gallery/kep-crab-market-1.jpg`,
+  mainEntityOfPage: canonical,
+  image: jsonLdImages,
+  isAccessibleForFree: true,
+  publicAccess: true,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Kep Crab Market',
-    addressLocality: 'Krong Kaeb',
-    addressRegion: 'Kep Province',
+    streetAddress: attraction.streetAddress,
+    addressLocality: attraction.addressLocality,
+    addressRegion: attraction.region,
+    postalCode: attraction.postalCode,
     addressCountry: attraction.country,
   },
   geo: {
@@ -40,6 +75,7 @@ const jsonLd = {
     latitude: attraction.lat,
     longitude: attraction.lng,
   },
+  hasMap: attraction.mapsUrl,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -49,10 +85,8 @@ const jsonLd = {
     },
   ],
   telephone: attraction.phone,
-  isAccessibleForFree: true,
   touristType: messages.meta.touristType ?? [],
-  aggregateRating: undefined,
-  sameAs: [attraction.mapsUrl],
+  sameAs: [attraction.mapsUrl, attraction.tourismPortal, attraction.tourismPortalOrg],
 };
 
 const faqLd = {
@@ -71,42 +105,60 @@ const breadcrumbLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: homeUrl },
-    { '@type': 'ListItem', position: 2, name: attractionName, item: canonical },
+    { '@type': 'ListItem', position: 2, name: isHome ? messages.hero.title : pageTitle, item: canonical },
   ],
 };
 ---
 <!doctype html>
 <html lang={htmlLang}>
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-YJTNXGWZNY"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YJTNXGWZNY');
-    </script>
+    <!-- Google tag (gtag.js) — GA4 -->
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.ga4Id}`}
+    ></script>
+    <script
+      is:inline
+      set:html={`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${siteConfig.ga4Id}');`}
+    ></script>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="alternate" hreflang="km" href={alts.km} />
     <link rel="alternate" hreflang="en" href={alts.en} />
     <link rel="alternate" hreflang="zh" href={alts.zh} />
     <link rel="alternate" hreflang="x-default" href={alts.xDefault} />
 
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDesc} />
+    <!-- Open Graph / social -->
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDesc} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={ogLocale[lang] ?? lang} />
-    <meta property="og:image" content={`${siteConfig.baseUrl}/gallery/kep-crab-market-1.jpg`} />
+    <meta property="og:image" content={heroImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={`${siteConfig.baseUrl}/gallery/kep-crab-market-1.jpg`} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDesc} />
+    <meta name="twitter:image" content={heroImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content={siteConfig.themeColor} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
+    <meta name="mobile-web-app-capable" content="yes" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -115,13 +167,23 @@ const breadcrumbLd = {
       rel="stylesheet"
     />
 
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)}></script>
+    <!-- The attraction and the FAQ are described *on the landing page*, so their
+         markup is emitted there only. On the legal pages they were previously
+         declared too, which claimed a FAQ and an entity URL those pages do not
+         actually show. Breadcrumbs stay everywhere — every page sits in one. -->
+    {
+      isHome && (
+        <>
+          <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+          <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />
+        </>
+      )
+    }
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>
 
     <slot name="head" />
   </head>
-  <body class="min-h-screen antialiased">
+  <body class="min-h-screen pb-16 antialiased md:pb-0">
     <a href="#overview" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-sky-700 focus:px-4 focus:py-2 focus:text-white">
       {messages.nav.overview}
     </a>
@@ -130,5 +192,13 @@ const breadcrumbLd = {
       <slot />
     </main>
     <Footer />
+    <MobileActions />
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
+    </script>
   </body>
 </html>

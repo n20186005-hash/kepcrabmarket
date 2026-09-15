@@ -10,6 +10,17 @@ const mapText = messages.footer.links.maps;
     <div class="p-6 sm:p-8">
       <h2 class="text-3xl font-bold text-gray-900">{m.title}</h2>
       <p class="mt-2 text-gray-600">{m.caption}</p>
+      <p class="mt-4 text-sm leading-relaxed text-gray-600">
+        {m.officialNote}{' '}
+        <a
+          href={attraction.tourismPortal}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-sky-700 hover:underline"
+        >
+          ↗ {messages.sources.officialLink}
+        </a>
+      </p>
     </div>
     <div class="aspect-[16/9] w-full">
       <iframe

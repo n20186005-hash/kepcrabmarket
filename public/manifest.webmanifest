@@ -1,0 +1,41 @@
+{
+  "id": "/",
+  "name": "Kep Crab Market — Visitor Guide",
+  "short_name": "Kep Crab Market",
+  "description": "Independent visitor guide to Kep Crab Market (ផ្សារក្ដាមក្រុងកែប) in Kep, Kep Province, Cambodia — location, opening hours, history, nearby landmarks and visitor tips.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f8fafc",
+  "theme_color": "#0369a1",
+  "lang": "km",
+  "dir": "ltr",
+  "categories": ["travel", "food", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

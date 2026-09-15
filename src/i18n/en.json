@@ -1,16 +1,26 @@
 {
   "meta": {
-    "title": "Kep Crab Market — Visitor Guide, History & Photos | Kep, Cambodia",
-    "description": "A practical, non-commercial guide to Kep Crab Market in Kep, Cambodia: its history, culture and coastal life, opening hours, how to get there, what to eat, public facilities, photos, and visitor tips.",
+    "title": "Kep Crab Market (Kep Seafood Market): Hours & Location Map",
+    "description": "Kep Crab Market in Krong Kaeb, Cambodia — rated 4.1★ on Google (5,600+ reviews). Opening hours, what's sold, how to get there, and a live location map.",
+    "entityDescription": "Comprehensive visitor guide to Kep Crab Market in Kep, Kep Province, Cambodia.",
+    "ogTitle": "Kep Crab Market - Kep Travel Guide",
+    "ogDescription": "Independent visitor guide to Kep Crab Market in Kep, Kep Province, Cambodia.",
+    "ogImageAlt": "Kep Crab Market in Kep, Cambodia",
     "keywords": "Kep Crab Market, Kep Cambodia, crab market, Kampot pepper crab, Kep travel guide, Kep seafood, Cambodia coast, Kep history",
     "touristType": ["Seafood lovers", "Families", "Independent travelers", "Photographers", "Eco-tourists"]
   },
+  "actions": {
+    "call": "Call",
+    "directions": "Directions"
+  },
   "hero": {
     "badge": "Kep · Cambodia",
-    "title": "Kep Crab Market",
-    "subtitle": "ផ្សារក្ដាមក្រុងកែប · 白马螃蟹市场",
+    "title": "Kep Crab Market (ផ្សារក្ដាមក្រុងកែប)",
+    "subtitle": "Kep Seafood Market · 白马螃蟹市场",
     "tagline": "Kep's most famous seafood market — fresh crab, a working fishing town, and the giant 'Crab King' monument by the Gulf of Thailand.",
     "cta": "Plan your visit",
+    "ctaExplore": "Explore the highlights",
+    "imageAlt": "Kep Crab Market - main view in Kep, Cambodia",
     "location": "Kep Province, Cambodia"
   },
   "overview": {
@@ -40,9 +50,16 @@
     "nearby": "Nearby",
     "highlights": "Highlights",
     "besttime": "Best Time",
+    "guide": "Visitor Guide",
     "transport": "Getting There",
     "facilities": "Facilities",
+    "weather": "Weather",
+    "tides": "Tides",
+    "science": "Ecology",
+    "more": "More",
     "location": "Location",
+    "reviews": "Reviews",
+    "sources": "Sources",
     "faq": "FAQ"
   },
   "header": {
@@ -53,6 +70,8 @@
   },
   "about": {
     "title": "About Kep Crab Market",
+    "lead": "Welcome to Kep Crab Market (ផ្សារក្ដាមក្រុងកែប), widely recognised as the Kep Crab Market — the landmark that gives the {domain} domain its meaning. Located in the heart of Kep, Kep Province, Cambodia, this destination serves as a primary hub for travellers visiting the region.",
+    "geo": ["Kep Crab Market", "Kep", "Kep Province", "Cambodia"],
     "body": [
       "Kep Crab Market (ផ្សារក្ដាមក្រុងកែប) is the best-known landmark of Kep, a small coastal province in southern Cambodia. It sits on the Gulf of Thailand, where fishing boats land their catch and vendors sell crab, fish, and shellfish straight from the water.",
       "The market is simple and working-class rather than polished. Wooden and tin stalls line the shore; ice boxes hold the day's crab; and just behind the stalls, the giant red 'Crab King' monument has become the town's symbol.",
@@ -60,7 +79,7 @@
     ]
   },
   "history": {
-    "title": "History & Background",
+    "title": "History & Significance of Kep Crab Market",
     "intro": "Kep's story is tied to Cambodia's coast — from a French-era seaside retreat to a quiet fishing town rebuilt around its crab market.",
     "timeline": [
       {
@@ -130,8 +149,9 @@
     }
   },
   "nearby": {
-    "title": "Nearby Attractions",
+    "title": "Landmarks & Attractions Around Kep Crab Market",
     "intro": "Kep is compact, so the crab market pairs naturally with a few other coastal stops within a short ride.",
+    "cluster": "When visiting Kep Crab Market, visitors can easily explore surrounding historical landmarks and points of interest, including Kep National Park and Rabbit Island (Koh Tonsay).",
     "items": [
       {
         "icon": "🌳",
@@ -229,6 +249,121 @@
           "Return for sunset along the seafront promenade."
         ]
       }
+    ],
+    "planTitle": "Recommended routes",
+    "planIntro": "Two ready-made outlines: a half day that fits neatly between Kampot and the coast, and a full day that takes in the market, the forest and the islands.",
+    "plans": [
+      {
+        "title": "Half day — market, waterfront and the park",
+        "duration": "About 3–4 hours",
+        "bestFor": "Travellers passing through, or anyone with an afternoon departure.",
+        "timeline": [
+          {
+            "time": "06:30",
+            "text": "Arrive before the boats finish unloading. The light is soft, the market is calm and you can watch the catch come ashore."
+          },
+          {
+            "time": "07:30",
+            "text": "Breakfast from the stalls — grilled squid, crab soup or noodles — then a slow walk along the waterfront."
+          },
+          {
+            "time": "08:30",
+            "text": "Photograph the 'Crab King' monument and the fishing boats, then choose crab to be cooked while you wait."
+          },
+          {
+            "time": "09:30",
+            "text": "Eat your crab at a shaded table with Kampot pepper and lime."
+          },
+          {
+            "time": "10:30",
+            "text": "Optional: drive up to Kep National Park for the ridge walk and viewpoints, then return along the seafront."
+          }
+        ],
+        "tip": "Heat and coach groups both peak between 10:00 and 14:00, so the earlier you start, the calmer the visit."
+      },
+      {
+        "title": "Full day — market, forest, island and sunset",
+        "duration": "About 8 hours",
+        "bestFor": "Visitors staying overnight in Kep or Kampot with their own transport.",
+        "timeline": [
+          {
+            "time": "06:30",
+            "text": "Start at the market for the landings and breakfast."
+          },
+          {
+            "time": "08:30",
+            "text": "Walk or cycle the seafront promenade past the white horse statue and the old villa ruins."
+          },
+          {
+            "time": "10:00",
+            "text": "Boat across to Koh Tonsay (Rabbit Island) — roughly 20–30 minutes in each direction."
+          },
+          {
+            "time": "12:30",
+            "text": "Lunch on the island, then swim off the beach and rest in the shade."
+          },
+          {
+            "time": "15:00",
+            "text": "Return to the mainland and cool off; buy pepper or palm sugar from local sellers."
+          },
+          {
+            "time": "16:30",
+            "text": "Kep National Park: the ridge loop and its café viewpoint are the classic late-afternoon route."
+          },
+          {
+            "time": "18:00",
+            "text": "Sunset back at the waterfront, then a simple seafood dinner near the market."
+          }
+        ],
+        "tip": "Boat services wind down in the late afternoon. Confirm your return crossing when you buy the ticket, and build in slack during the wet season."
+      }
+    ],
+    "audienceTitle": "Visit plans by traveller type",
+    "audienceIntro": "The market suits very different kinds of visitors, but the best timing and pace change completely with your group, your mobility and what you came to see. Pick the plan that matches you.",
+    "audienceLabels": {
+      "when": "Best time",
+      "pace": "Suggested pace"
+    },
+    "audience": [
+      {
+        "icon": "👨‍👩‍👧",
+        "title": "Families with children",
+        "when": "Early morning, 06:30–09:00",
+        "pace": "Slow — 1.5 to 2 hours at the market",
+        "points": [
+          "Come before the heat and before the tour buses; there is far more space to move.",
+          "Watch the boats unload — it is the most engaging part of the visit for children.",
+          "Buy crab that is already cooked at a stall so there is no long wait with hungry kids.",
+          "Keep children away from the water's edge, the hot grills and moving motorbikes.",
+          "Bring hats, drinking water, wet wipes and a change of clothes."
+        ]
+      },
+      {
+        "icon": "📷",
+        "title": "Photographers & nature lovers",
+        "when": "First light, 05:45–08:00, and again 16:30–18:30",
+        "pace": "Flexible — 2 to 4 hours",
+        "points": [
+          "Dawn gives the softest light and the busiest working scene on the quay.",
+          "Ask before photographing people close up, and respect fishers handling knives and ice.",
+          "Low tide exposes the mudflats — a completely different subject from the boats.",
+          "Pair the market with the Kep National Park trail for forest birds and butterflies.",
+          "Carry a rain cover: showers arrive fast in the green season."
+        ]
+      },
+      {
+        "icon": "♿",
+        "title": "Lower mobility & accessibility",
+        "when": "Mid-morning on a weekday",
+        "pace": "Short — 45 to 90 minutes, with seating breaks",
+        "points": [
+          "Approach along the seafront road, which is flat and paved, rather than through the narrow inner lanes.",
+          "Expect uneven concrete, loose gravel, awkward steps and stretches without handrails.",
+          "Waterfront-side restaurants generally offer easier access and seating than the inner stalls.",
+          "A private car or tuk-tuk can drop you close to the entrance — ask the driver to wait.",
+          "Avoid the wet season, when surfaces turn slippery, and travel with a companion where possible."
+        ]
+      }
     ]
   },
   "transport": {
@@ -317,12 +452,148 @@
         "icon": "💊",
         "title": "Pharmacy & medical",
         "desc": "Basic pharmacies and a health centre can be found in town for minor needs. For serious issues, plan onward travel to Kampot or Phnom Penh."
+      },
+      {
+        "icon": "📶",
+        "title": "Mobile signal & Wi-Fi",
+        "desc": "Mobile coverage in Kep town is generally usable, strongest along the main road and weaker inside some market buildings. Cafés and guesthouses often offer free Wi-Fi, and prepaid SIM cards can be bought in town if you need mobile data."
+      },
+      {
+        "icon": "🛺",
+        "title": "Getting around locally",
+        "desc": "Tuk-tuks, moto-taxis and shared remorque services cover the short hops between the market, the beach and the guesthouse area. Agree the fare before setting off, or use a ride-hailing app where one is available."
+      },
+      {
+        "icon": "🛟",
+        "title": "Water safety",
+        "desc": "This is a working waterfront with slippery steps, mooring ropes and moving boats. Swimming at the market itself is not advisable — use recognised beaches instead, and note that lifeguard cover is generally not provided."
+      },
+      {
+        "icon": "💧",
+        "title": "Drinking water & refills",
+        "desc": "Bottled water is sold throughout the market and in nearby shops. Tap water is not for drinking; if you carry a reusable bottle, cafés and guesthouses will often refill it for you."
+      },
+      {
+        "icon": "👨‍👩‍👧",
+        "title": "Families with children",
+        "desc": "In daylight the market is a lively, open-air place that children tend to enjoy. Hold small children's hands near the water and around hot cooking areas, and bring sun hats, water and a change of clothes."
+      },
+      {
+        "icon": "🎒",
+        "title": "Valuables & belongings",
+        "desc": "Keep bags zipped and in front of you in the busy lanes, carry only what you need for the day, and leave passports and spare cash at your accommodation. There is no formal left-luggage service here."
+      },
+      {
+        "icon": "♻️",
+        "title": "Waste & recycling",
+        "desc": "Bin provision is limited, so please carry out what you bring in. Avoid single-use plastic where you can, and never discard waste or fish scraps into the sea."
       }
-    ]
+    ],
+    "note": "Availability, opening hours and prices change with the season and with individual operators. This page describes the types of facilities that typically exist and deliberately names no business — please verify details locally before relying on them."
+  },
+  "science": {
+    "title": "Ecology, Science & Visitor Responsibility",
+    "intro": "The market is the visible end of a much larger system: a shallow tropical bay, its mudflats, mangroves and seagrass beds, and a fishing economy that has worked this coastline for generations. This section explains what you are looking at, and what visiting responsibly means in practice.",
+    "ecologyTitle": "The coastal system behind the market",
+    "items": [
+      {
+        "icon": "🦀",
+        "title": "The mud crab",
+        "body": [
+          "The crabs sold here belong to the genus Scylla — broad-shelled, heavy-clawed animals that burrow into mudflats and mangrove roots rather than swimming in open water. They grow by moulting, and the short window right after a moult produces the soft-shell crab that is prized as a delicacy.",
+          "Most are taken with baited traps and gill nets set in the shallows and lifted on the tide, which is why the market's rhythm follows the tide table rather than the clock. Across much of Southeast Asia fishers avoid selling egg-bearing females; local practice varies, and asking is the easiest way to learn what applies here."
+        ]
+      },
+      {
+        "icon": "🌿",
+        "title": "Mangroves & seagrass",
+        "body": [
+          "Strips of mangrove forest and shallow seagrass beds still run along this coast, and both work as nurseries. Juvenile fish, prawns and crabs shelter among the roots and blades until they are large enough to move into open water.",
+          "That link is direct: a large share of the commercial catch in this bay began its life in one of those two habitats. Seagrass is also the main food of the dugong, which still survives in small numbers in the wider Gulf of Thailand."
+        ]
+      },
+      {
+        "icon": "🌊",
+        "title": "Tides, seasons & water quality",
+        "body": [
+          "The Gulf of Thailand is shallow and semi-enclosed, which gives it a strong seasonal rhythm. Through the dry season little rain reaches the bay, so coastal water stays comparatively clear. In the wet season, run-off carries sediment and nutrients offshore — productivity rises while visibility falls.",
+          "Tidal range here is modest by global standards, but the tide still decides when boats go out, when the flats are exposed and when the best of the catch arrives. It is the single best explanation for why the market looks like a different place at 07:00 and at 17:00."
+        ]
+      },
+      {
+        "icon": "🐦",
+        "title": "Birds & coastal wildlife",
+        "body": [
+          "At low tide the mudflats and the mangrove edge are busy: herons, egrets, terns and kingfishers are routine, with gulls overhead and the occasional raptor. Immediately inland, Kep National Park adds forest species and butterflies.",
+          "In the water you may see crabs, squid, prawns and reef fish. Nothing here is aggressive by nature, but stonefish, sea urchins and jellyfish all occur in Cambodian coastal waters — a good reason to keep footwear on around rocks and never to handle an animal you cannot identify."
+        ]
+      },
+      {
+        "icon": "🌶️",
+        "title": "Kampot pepper and the protected name",
+        "body": [
+          "Kampot pepper, grown in the surrounding province, became the first Cambodian product to win protected geographical indication status, recognised in 2010. The crop depends on the same free-draining soils and coastal humidity that shape Kep's farmland.",
+          "Almost every crab dish here is built on it: pepper, lime, garlic and a little sugar. That single plate is a neat summary of the local economy — the sea, the farms inland and a protected regional product, all in one serving."
+        ]
+      },
+      {
+        "icon": "🏛️",
+        "title": "Why Kep looks the way it does",
+        "body": [
+          "Kep was laid out in the early twentieth century as a French colonial seaside resort, and the hillside above the market is still scattered with abandoned modernist villas from that era, left empty through the 1970s and after.",
+          "The contrast is the most distinctive thing about the town: a working fishing market at sea level, derelict villas above it, and a seafront that has been lived in, lost and rebuilt rather than purpose-built for visitors. Walking between the two is a good half-hour of history."
+        ]
+      }
+    ],
+    "dutyTitle": "Visitor responsibility",
+    "dutyIntro": "None of the following is exotic or difficult — it is simply what keeps a working market worth visiting.",
+    "duties": [
+      {
+        "icon": "⚖️",
+        "title": "Buy at a fair price",
+        "desc": "Bargaining is normal here but the margins are thin. Settle the price before the cooking starts, and remember you are negotiating with the person who caught it."
+      },
+      {
+        "icon": "✋",
+        "title": "Look, don't handle",
+        "desc": "Live crabs, squid and fish are someone's livelihood, and they can bite, spike or spoil. Never pick up stock unless you are invited to."
+      },
+      {
+        "icon": "🚫",
+        "title": "Refuse undersized or restricted animals",
+        "desc": "Do not buy very small crabs, egg-bearing females, or any species you are told is restricted. Declining is the most effective pressure a visitor can apply."
+      },
+      {
+        "icon": "🧊",
+        "title": "Stay clear of working areas",
+        "desc": "Ice blocks, knives, mooring ropes and moving motorbikes are the real hazards. Watch your feet and keep out of the way of people carrying loads."
+      },
+      {
+        "icon": "♻️",
+        "title": "Take your waste with you",
+        "desc": "Bins are limited. Carry out bottles, bags and shells — and never throw anything, including fish scraps, into the sea."
+      },
+      {
+        "icon": "🐒",
+        "title": "Don't feed the wildlife",
+        "desc": "Feeding birds and animals changes their behaviour at the expense of their health, and it is the fastest way to turn a wild place into a dependent one."
+      },
+      {
+        "icon": "📷",
+        "title": "Ask before photographing people",
+        "desc": "A gesture and a smile is usually enough. Respect anyone who declines, and avoid photographing children without a parent's agreement."
+      },
+      {
+        "icon": "🗣️",
+        "title": "Keep your voice and pace low",
+        "desc": "This is a workplace, not a stage. Stepping aside, speaking quietly and not blocking the quay costs nothing and is genuinely appreciated."
+      }
+    ],
+    "note": "This section is written for general orientation rather than as a scientific or legal reference. Species, ecological relationships and local practices vary, and rules on fishing and protected species are set by the relevant authorities. For authoritative detail, consult Cambodia's fisheries and environment agencies, or published research on the Gulf of Thailand."
   },
   "weather": {
-    "title": "Weather & Climate",
-    "intro": "Kep has a tropical climate with a clear wet and dry season.",
+    "title": "Weather, Live Advice & 7-Day Outlook",
+    "intro": "Live readings for the market itself, translated straight into what to do about them: what to wear, how to plan the day, what to pack, and which coastal or hill cautions apply right now. The seasonal picture for choosing when to visit follows below.",
     "items": [
       {
         "icon": "🌡️",
@@ -344,7 +615,283 @@
         "title": "What to wear",
         "desc": "Light, breathable clothing, a hat, and sunscreen. A light rain layer helps in the green season."
       }
-    ]
+    ],
+    "live": {
+      "title": "Live conditions at Kep Crab Market",
+      "updated": "Readings refreshed at {time} local time",
+      "feelsLike": "Feels like",
+      "humidity": "Humidity",
+      "wind": "Wind",
+      "rainNow": "Rain now",
+      "uv": "UV index",
+      "wave": "Waves",
+      "water": "Sea temperature",
+      "sunrise": "Sunrise",
+      "sunset": "Sunset",
+      "forecastTitle": "Next seven days",
+      "today": "Today",
+      "rainChance": "Rain chance",
+      "noticeTitle": "What to watch out for",
+      "groupOutfit": "What to wear",
+      "groupPlan": "How to plan the day",
+      "groupBring": "What to pack",
+      "hourlyTitle": "Rain chance hour by hour",
+      "hourlyCaption": "Each bar is the chance of rain in that hour; taller bars mean wetter. The highlighted stretch is the driest daylight window for outdoor plans.",
+      "bestWindow": "Driest window",
+      "unavailable": "Live readings are briefly unavailable. The seasonal guidance below still applies."
+    },
+    "smart": {
+      "headline.good": "Good day for the market and the waterfront — nothing in the forecast needs a change of plan.",
+      "headline.mixed": "Workable, but you will want to plan around the wetter stretches and the heat.",
+      "headline.poor": "Wet, windy or stormy. Keep the day short, flexible and close to shelter.",
+
+      "alerts.calm": "No weather risk is flagged for today — the usual tropical cautions apply.",
+
+      "alert.thunder": "Thunderstorms are forecast. Do not climb Kep National Park, swim, or shelter under a lone tree; stay inside while the storm passes.",
+      "alert.rain": "Heavy rain is expected. Avoid the waterfront steps and low-lying lanes, expect standing water and run-off, and leave boat trips for another day.",
+      "alert.wind": "Strong wind and a rough sea. Stay back from the pier edge and the rocky shore, and expect boat services to close at short notice.",
+      "alert.gust": "Gusty conditions. Hold onto hats and phones on the promenade, and keep an eye on children near the water.",
+      "alert.heat": "Very high apparent temperature. Keep outdoor stops short, drink water constantly and watch for signs of heat exhaustion.",
+      "alert.uv": "Extreme ultraviolet today. Cover up, stay out of direct sun in the middle of the day and protect children in particular.",
+      "alert.fog": "Poor visibility. Sea views and viewpoints will be washed out, and boat crossings may be delayed.",
+
+      "outfit.hot": "Hot and humid — light, breathable clothing and a hat. Loose cotton beats anything tight.",
+      "outfit.mild": "Comfortable by local standards — normal summer clothing is fine.",
+      "outfit.swing": "Big swing between day and night ({min}°–{max}°) — pack a light layer for the evening.",
+      "outfit.cool": "Cool for this coast — bring long sleeves or a light jacket, especially if you are out on the water.",
+      "outfit.rain": "Wet-weather clothing. A light waterproof shell is far easier than an umbrella in the wind.",
+      "outfit.showerLayer": "A shower is possible, so a thin packable layer is worth carrying.",
+      "outfit.wind": "Skip loose skirts and wide-brim hats, and tie long hair back — the wind will find them.",
+      "outfit.grip": "Shoes with tread. Wet concrete, boardwalks and market floors around here get genuinely slippery.",
+      "outfit.uv": "Cover shoulders and wear sunglasses. On the water a hat works better than sunscreen alone.",
+
+      "plan.goodOutdoor": "Clear enough for a full outdoor day — the market, the promenade and the park all work.",
+      "plan.avoidMidday": "Shift the day to early morning or after 16:00, and take a shaded break through the middle.",
+      "plan.window": "Best outdoor window today: {from}–{to}. Build the market visit and any walk around it.",
+      "plan.wetWindow": "Rain is most likely between {from} and {to} — keep the market meal and any shopping for that stretch.",
+      "plan.noBoats": "Boat trips to Rabbit Island are likely to be cancelled or uncomfortable. Check at the pier before you travel.",
+      "plan.boatCaution": "Crossings can still run, but they will be choppy and slower than usual. Take the morning boats.",
+      "plan.boatGood": "Sea conditions suit a crossing to Rabbit Island or an evening on the water.",
+      "plan.parkThunder": "Stay at sea level today — the exposed ridge is the wrong place to be in a thunderstorm.",
+      "plan.parkWet": "After this much rain the park trails turn muddy and slick; use the paved viewpoints instead of the loop.",
+      "plan.parkGood": "Kep National Park is a good bet: the ridge trail is largely shaded and the footing is firm.",
+      "plan.coveredMeal": "Choose a covered table for your crab so a passing shower does not end the meal.",
+      "plan.shortStops": "Keep each outdoor stop under about 30 minutes and alternate with shaded or air-conditioned breaks.",
+      "plan.photos": "Soft, even light — good conditions for photographing the market, the boats and the water.",
+      "plan.flats": "Calm enough to walk the low-tide flats; go with the falling tide and stay on firm ground.",
+
+      "bring.umbrella": "A folding umbrella.",
+      "bring.raincoat": "A rain jacket — long umbrellas are hard to control in wind.",
+      "bring.dryBag": "A dry bag or zip pouch for phones and cameras.",
+      "bring.sunKit": "SPF 30+ sunscreen, sunglasses and a hat.",
+      "bring.water": "At least 1.5 litres of drinking water per person.",
+      "bring.wipes": "Wet wipes or hand sanitiser for after handling shellfish.",
+      "bring.repellent": "Mosquito repellent for the evening.",
+      "bring.towel": "A quick-dry towel and a change of clothes if you plan to swim.",
+      "bring.footwear": "Footwear with grip for wet boards and rocks.",
+      "bring.cash": "Cash in small notes — the market is largely cash-based.",
+
+      "scene.sea": "Sea and waterfront",
+      "sea.waveCalm": "Waves around {wave} m — flat enough to swim off a proper beach or wade the flats.",
+      "sea.waveModerate": "Waves around {wave} m — manageable for a confident swimmer, but the rocks stay slippery and the surf pushes you.",
+      "sea.waveRough": "Waves around {wave} m — do not swim. The pier edge and rocky shore are genuinely dangerous today.",
+      "sea.windCalm": "The sea looks calm on the wind readings — a good day for the waterfront and the islands.",
+      "sea.windChoppy": "Wind is picking up, so expect a choppy sea. Small boats still run, but the ride will be bumpy.",
+      "sea.windRough": "Strong wind is driving a rough sea. Boat crossings may be cancelled, so check before heading to the pier.",
+      "sea.swimWarm": "Sea temperature around {temp}°C — comfortably warm for swimming.",
+      "sea.swimMild": "Sea temperature around {temp}°C — refreshing rather than warm, so go in and come out quickly.",
+      "sea.swimCool": "Sea temperature around {temp}°C — cold enough to cut a swim short, especially for children.",
+      "sea.lifeguard": "There is no lifeguard service here. Swim only where locals swim, and never alone.",
+      "sea.rocks": "Stay off the rocks and the pier edge entirely — spray and slipping are the real risk today.",
+      "sea.tideNote": "The mudflats appear around low tide, which shifts roughly 50 minutes later each day. Confirm the timing at the pier.",
+
+      "scene.hill": "Kep National Park and forest",
+      "hill.lapse": "The ridge runs about {delta}°C cooler than the market, and the wind up there is noticeably stronger.",
+      "hill.thunder": "Thunderstorms are possible — the ridge is the worst place to be, so stay at sea level today.",
+      "hill.slip": "Rain has made the trails greasy; expect roots, clay and slick stone underfoot.",
+      "hill.dry": "Trails are dry and firm — a good day for the loop walk.",
+      "hill.heat": "Start early and carry more water than you think you need; the exposed sections have little shade.",
+      "hill.haze": "Haze or mist will mute the viewpoints today — the climb is still worthwhile, the panorama is not.",
+      "hill.view": "Visibility is good — the viewpoints and the sea panorama are worth the climb.",
+      "hill.bugs": "Mosquitoes will be active in the forest this evening — repellent and long sleeves help.",
+
+      "scene.market": "At the market today",
+      "market.arrive": "Aim to be here before 08:00. The catch lands early, the stalls are fullest, and the heat has not arrived.",
+      "market.tide": "The quay is liveliest just after the boats come in, so the tide table matters more than the clock.",
+      "market.covered": "If a shower looks likely, take a table on the covered seaward side rather than in the open lanes.",
+      "market.coldChain": "In this heat, eat cooked seafood within a couple of hours and keep it out of the sun if you are carrying it.",
+      "market.boats": "The sea is calm enough for the boats to be working normally — a good day to watch the landings.",
+
+      "tide.slack": "Slack water around {time} — the current eases and the water is about to turn. The calmest hour of the day for the pier steps and the shallows.",
+      "tide.rising": "The water is still coming in. Ground that is dry now will be under water within a few hours, so keep bags and shoes above the high-water line.",
+      "tide.falling": "The water is going out. More shore appears hour by hour, and whatever you leave on the low flats will be a long way off by the time you turn round.",
+      "tide.lowDaylight": "Low water at {time}, in daylight — the best window today to walk the exposed flats and watch the birds working them.",
+      "tide.lowDark": "Today's low water falls at {time}, after dark. If the mudflats are what you came for, plan around a daytime low instead.",
+      "tide.highDaylight": "High water at {time}, in daylight — the quay is at its liveliest as the boats come alongside, and the shallows hold the most water for swimming.",
+      "tide.highDark": "High water falls at {time}, after dark. The quay will be quiet this evening, and the flats will still be exposed.",
+      "tide.bigRange": "A wide tidal range today ({range} m): the water travels as far between high and low as it does here all month, so the shoreline changes noticeably through the day.",
+      "tide.smallRange": "A narrow tidal range today ({range} m): high and low water will look much the same, so the tide is not something you need to plan around.",
+      "tide.marketRhythm": "Fishers work the tide rather than the clock, so the quay is busiest just after the water turns and the boats come in — usually in the early morning."
+    },
+    "conditions": {
+      "clear": "Clear sky",
+      "mainlyClear": "Mostly clear",
+      "partlyCloudy": "Partly cloudy",
+      "overcast": "Overcast",
+      "fog": "Fog or mist",
+      "drizzle": "Light drizzle",
+      "rain": "Rain",
+      "heavyRain": "Heavy rain",
+      "showers": "Passing showers",
+      "thunderstorm": "Thunderstorms",
+      "snow": "Wintry precipitation"
+    },
+    "compass": {
+      "n": "N",
+      "ne": "NE",
+      "e": "E",
+      "se": "SE",
+      "s": "S",
+      "sw": "SW",
+      "w": "W",
+      "nw": "NW"
+    },
+    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "seasonal": {
+      "title": "Seasonal visit strategy",
+      "intro": "Kep runs on a strong wet/dry rhythm, and the sea, the catch and the wildlife all shift with it. The table below combines climate, coastal water conditions and marine life so you can choose the season that matches the visit you want.",
+      "columns": {
+        "season": "Season",
+        "climate": "Climate",
+        "water": "Sea & water",
+        "wildlife": "Wildlife & catch",
+        "advice": "How to plan"
+      },
+      "rows": [
+        {
+          "season": "Cool dry season",
+          "months": "November – January",
+          "climate": "The northeast monsoon brings the driest, most comfortable stretch of the year. Days sit around 26–31°C and nights can fall to about 20°C, with very little rain.",
+          "water": "Seas are usually slight to calm and coastal water is at its clearest; with little rainfall there is less sediment and nutrient run-off from the land.",
+          "wildlife": "Fishing boats return in numbers through the early morning and mud crabs (Scylla) are at their fullest; herons, egrets and terns feed across the mudflats and mangrove edges.",
+          "advice": "The best all-round season — comfortable for a full day of market and waterfront time. Mornings can feel cool, so a light layer helps, and you still need to drink water regularly."
+        },
+        {
+          "season": "Hot dry season",
+          "months": "February – April",
+          "climate": "Temperatures climb to the annual peak, with afternoons commonly 32–35°C and a humid, close feel. Thunderstorms can break through around April.",
+          "water": "The sea is generally calm but mid-day ultraviolet is at its strongest, and surface water temperatures reach roughly 30°C.",
+          "wildlife": "Crab is sold all year, though landings swing with season and tide. Intertidal life is quieter during the middle of the day as the flats bake.",
+          "advice": "Front-load the day: visit between 06:00–10:00 or after 16:00, and avoid the midday sun. Carry more water than you think you need and use sun protection."
+        },
+        {
+          "season": "Early green season",
+          "months": "May – July",
+          "climate": "The southwest monsoon establishes itself, afternoon showers become frequent and humidity rises sharply. Temperatures stay around 27–32°C.",
+          "water": "Wind and coastal sediment increase, so the water turns murkier after heavy rain — especially near river mouths where fresh water pushes out over the sea.",
+          "wildlife": "Early rains are a nursery period for many coastal fish, with mangroves and seagrass beds acting as shelter for juveniles — the reason these habitats matter for the local fishery.",
+          "advice": "Mornings are usually still clear, so arrive early. Carry rain gear, and take care on wet boardwalks and market floors, which turn slippery."
+        },
+        {
+          "season": "Peak wet season",
+          "months": "August – October",
+          "climate": "The heaviest and most frequent rain falls now, often in short intense bursts, with temperatures around 26–31°C. Rain eases again during October.",
+          "water": "Stronger wind and swell reduce coastal visibility, and boat services may be adjusted or cancelled at short notice.",
+          "wildlife": "Rain washes nutrients into the bay and inshore productivity rises, but during the worst weather seabird and shore activity drops away.",
+          "advice": "Check boat sailings and road conditions before setting out and keep your schedule flexible. Waterproof bags, and a covered seafood meal at the market, are the sensible plan."
+        }
+      ],
+      "note": "Seasonal guidance combines 1991–2020 long-term monthly climate averages (temperature, rainfall and wind) with published regional marine and coastal ecology references, and is intended for trip planning only. For any given day, trust the live readings at the top of this section and any local notices at the market."
+    }
+  },
+  "tides":   {
+    "title": "Tides at Kep",
+    "intro": "Kep faces a shallow, semi-enclosed gulf, where the water makes roughly one high and one low a day — each about 50 minutes later than the day before. The tide is the real clock on this waterfront: it decides when the boats come in, when the mudflats appear and when the quay is at its best.",
+    "live": {
+      "title": "The water right now",
+      "updated": "Predicted for {time} local time",
+      "level": "Water level",
+      "state": "Tide",
+      "rising": "coming in",
+      "falling": "going out",
+      "range": "Next 24 hours",
+      "nextHigh": "Next high water",
+      "nextLow": "Next low water",
+      "inHours": "in {hours} h",
+      "soon": "within the hour",
+      "high": "High water",
+      "low": "Low water",
+      "adviceTitle": "What the tide means today",
+      "chartTitle": "Water level, next three days",
+      "chartCaption": "Predicted height above mean sea level. Dots mark high and low water; the shaded bands are the hours of darkness.",
+      "now": "now",
+      "tableTitle": "High and low water",
+      "columns": {
+        "day": "Day",
+        "time": "Time",
+        "height": "Height"
+      },
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "unavailable": "Tide predictions are briefly unavailable. The guidance below still applies."
+    },
+    "guide": {
+      "title": "Reading the water",
+      "intro": "The range here is small by global standards — often under a metre — but everything on this waterfront still runs on it.",
+      "items": [
+        {
+          "icon": "🌊",
+          "title": "At high water",
+          "desc": "The water reaches the steps and the shallows fill. This is when the quay is busiest: boats come alongside, ice is unloaded and the morning's catch changes hands. It is also the only time the shallows hold enough water to swim."
+        },
+        {
+          "icon": "🦀",
+          "title": "At low water",
+          "desc": "The sea pulls back to leave a broad apron of mud and rock. Herons, egrets and terns work the exposed ground, and you can walk out over seabed that floated boats an hour earlier. Wear shoes you do not mind losing to the mud."
+        },
+        {
+          "icon": "🌗",
+          "title": "Spring and neap tides",
+          "desc": "Around the new and full moon the sun and moon pull together and the month's widest ranges arrive; a week later the two pulls cancel out and the ranges collapse. On a neap day, high and low water look much the same."
+        },
+        {
+          "icon": "⏱️",
+          "title": "Why the times keep moving",
+          "desc": "The moon rises about 50 minutes later each day, so high and low water arrive about 50 minutes later too, drifting all the way round the clock over a month. Never carry yesterday's time over to today."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Tide words, briefly",
+      "intro": "The handful of terms a tide table assumes you already know.",
+      "rows": [
+        {
+          "term": "High water",
+          "desc": "The highest level the water reaches in a cycle — the top of the tide."
+        },
+        {
+          "term": "Low water",
+          "desc": "The lowest level, when the most shore is exposed."
+        },
+        {
+          "term": "Slack water",
+          "desc": "The brief pause at high or low water when the current stops and reverses. Usually the calmest and safest water of the day."
+        },
+        {
+          "term": "Tidal range",
+          "desc": "How far the water travels between high and low. Around Kep it is often under a metre — still enough to empty or fill the quay's working edge."
+        },
+        {
+          "term": "Diurnal tide",
+          "desc": "One high and one low water a day, which is what the Gulf of Thailand mostly does — unlike the twice-daily pattern most tide apps assume."
+        },
+        {
+          "term": "Spring and neap tides",
+          "desc": "The widest ranges of the month, around the new and full moon, and the narrowest, about a week later. Nothing to do with the season."
+        }
+      ]
+    },
+    "note": "Heights are predictions from a global tidal model, referenced to mean sea level rather than to a local chart datum, and they are not corrected against a tide gauge. Treat the times as accurate to roughly 15 minutes and the heights to a few centimetres. For anything that matters — a walk out onto the flats, a boat trip, wading near the rocks — check the water against the shore yourself before you commit."
   },
   "tips": {
     "title": "Visitor Tips",
@@ -404,8 +951,9 @@
     ]
   },
   "map": {
-    "title": "Location & Map",
+    "title": "Location & How to Visit Kep Crab Market in Kep",
     "caption": "Kep Crab Market on the waterfront of Kep town, Kep Province.",
+    "officialNote": "For official updates and regional tourism information, visit the Cambodia Ministry of Tourism official tourism portal.",
     "links": {
       "maps": "Open in Google Maps"
     }
@@ -422,7 +970,8 @@
       "cookie": "Cookie Settings"
     },
     "rights": "© {year} Kep Crab Market Guide. An independent, non-commercial information project.",
-    "disclaimer": "This is a non-commercial, informational guide compiled from public sources. Details such as hours, facilities, and services can change — verify locally before you travel. We do not recommend or rank any business."
+    "disclaimer": "This is a non-commercial, informational guide compiled from public sources. Details such as hours, facilities, and services can change — verify locally before you travel. We do not recommend or rank any business.",
+    "imageRights": "Image rights: all images displayed on this website remain the property and copyright of their original photographers."
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -474,8 +1023,43 @@
       {
         "q": "Can I take photos?",
         "a": "Generally yes, but ask before photographing vendors or their catches out of respect."
+      },
+      {
+        "q": "Is Kep Crab Market the same as Kep Seafood Market?",
+        "a": "Yes — it is one and the same waterfront market in Kep town. English listings often call it 'Kep Seafood Market'; the Khmer name is ផ្សារក្ដាមក្រុងកែប, and the giant crab statue at the entrance is the easiest landmark for it."
+      },
+      {
+        "q": "What else is there to do near Kep Crab Market?",
+        "a": "Kep is compact: the market sits within a short ride of Kep National Park and its walking loop, the beachfront and the crab statue, and the pier for boats to Rabbit Island (Koh Tonsay). Kampot, with its pepper farms and riverside, is about 25 km away."
       }
     ]
+  },
+  "reviews": {
+    "title": "Kep Crab Market Reviews & Ratings (Google Maps)",
+    "intro": "The rating below is cited from the Google Maps listing for Kep Crab Market and is refreshed periodically. Individual review texts are not copied here — follow the link to read them in full on Google Maps.",
+    "ratingLabel": "Google Maps rating",
+    "countLabel": "Google Maps reviews",
+    "categoryLabel": "Category",
+    "outOf": "out of 5",
+    "sourceNote": "Synced from Google Maps user reviews, snapshot September 2026; copyright remains with the original reviewers and Google Maps.",
+    "syncLine": "Rating and review count synced from Google Maps user reviews · September 2026 · View all reviews on Google Maps ↗",
+    "button": "View all reviews on Google Maps",
+    "ariaLabel": "Kep Crab Market rating and review count, cited from Google Maps"
+  },
+  "sources": {
+    "title": "Sources & Attribution",
+    "intro": "This independent guide cites the public sources listed below, with the attribution and rights statement for each item.",
+    "reviewLabel": "Ratings & reviews",
+    "reviewSync": "Synced September 2026",
+    "mapsLinkLabel": "View all reviews on Google Maps",
+    "geoLabel": "Location & coordinates",
+    "mapsLinkGeo": "Kep Crab Market on Google Maps",
+    "historyLabel": "Historical background",
+    "officialLabel": "Official tourism information",
+    "officialLink": "Cambodia Ministry of Tourism — Official Tourism Portal",
+    "imagesLabel": "Images",
+    "imageRights": "All images displayed on this website remain the property and copyright of their original photographers.",
+    "note": "Google Maps links and rating data are used in accordance with Google's Terms of Service. The rating snapshot is displayed for information only and does not imply any endorsement."
   },
   "legal": {
     "title": "Legal",

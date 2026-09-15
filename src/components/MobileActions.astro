@@ -1,0 +1,44 @@
+---
+/**
+ * Fixed action bar for small screens: open the map or call ahead.
+ *
+ * These are the two things a visitor actually does on a phone, usually while
+ * already on the road — Search Console shows the market ranking far better on
+ * mobile than on desktop, so the mobile view gets the direct actions rather
+ * than a nav menu that hides them.
+ *
+ * Desktop keeps the header navigation and shows no bar.
+ */
+import { getI18n } from '../i18n/ui';
+import { attraction } from '../config/site';
+
+const { messages } = getI18n(Astro.url);
+const a = messages.actions;
+
+// Keep the dial string machine-readable; the display form stays in the copy.
+const dial = attraction.phone.replace(/[^\d+]/g, '');
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-40 border-t border-black/5 bg-white/90 backdrop-blur md:hidden"
+  style="padding-bottom: env(safe-area-inset-bottom)"
+>
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-2 px-3 py-2">
+    <a
+      href={attraction.mapsUrl}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center justify-center gap-1.5 rounded-xl bg-sky-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800"
+    >
+      <span aria-hidden="true">📍</span>
+      {a.directions}
+    </a>
+    <a
+      href={`tel:${dial}`}
+      class="inline-flex items-center justify-center gap-1.5 rounded-xl border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-sky-900 transition hover:bg-sky-100"
+    >
+      <span aria-hidden="true">📞</span>
+      {a.call}
+    </a>
+  </div>
+</div>

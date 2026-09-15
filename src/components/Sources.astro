@@ -1,0 +1,87 @@
+---
+import { getI18n } from '../i18n/ui';
+import { attraction } from '../config/site';
+const { messages } = getI18n(Astro.url);
+const s = messages.sources;
+const r = messages.reviews;
+const h = messages.history;
+
+// E-E-A-T: every externally sourced claim on the page is attributed here, with
+// the synchronization date and the rights statement for each item.
+const items: {
+  label: string;
+  value?: string;
+  desc?: string;
+  links: { label: string; url: string }[];
+}[] = [
+  {
+    label: s.reviewLabel,
+    value: s.reviewSync,
+    desc: r.sourceNote,
+    links: [{ label: s.mapsLinkLabel, url: attraction.mapsUrl }],
+  },
+  {
+    label: s.geoLabel,
+    value: `${attraction.lat}, ${attraction.lng} · ${attraction.plusCode}`,
+    links: [{ label: s.mapsLinkGeo, url: attraction.mapsUrl }],
+  },
+  {
+    label: s.historyLabel,
+    value: s.reviewSync,
+    desc: h.sourcesNote,
+    links: (h.sources ?? []).map((src: any) => ({ label: src.label, url: src.url })),
+  },
+  {
+    label: s.officialLabel,
+    links: [
+      { label: s.officialLink, url: attraction.tourismPortal },
+      { label: 'tourismcambodia.org', url: attraction.tourismPortalOrg },
+    ],
+  },
+  {
+    label: s.imagesLabel,
+    desc: s.imageRights,
+    links: [],
+  },
+];
+---
+<section id="sources" class="mx-auto max-w-6xl px-4 py-14">
+  <div class="rounded-3xl border border-black/5 bg-white p-6 shadow-sm sm:p-10">
+    <h2 class="text-3xl font-bold text-gray-900">{s.title}</h2>
+    <p class="mt-2 max-w-3xl text-gray-600">{s.intro}</p>
+
+    <dl class="mt-8 divide-y divide-gray-100 border-t border-gray-100">
+      {
+        items.map((item) => (
+          <div class="grid gap-2 py-5 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)] sm:gap-6">
+            <dt class="text-sm font-semibold text-gray-900">
+              {item.label}
+              {item.value && <span class="mt-1 block text-xs font-normal text-sky-700">{item.value}</span>}
+            </dt>
+            <dd class="text-sm leading-relaxed text-gray-600">
+              {item.desc && <p>{item.desc}</p>}
+              {item.links.length > 0 && (
+                <ul class="mt-2 flex flex-wrap gap-x-5 gap-y-1">
+                  {item.links.map((link) => (
+                    <li>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-medium text-sky-700 hover:underline"
+                      >
+                        ↗ {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p class="mt-6 rounded-2xl bg-gray-50 px-4 py-3 text-xs leading-relaxed text-gray-600">{s.note}</p>
+  </div>
+</section>
