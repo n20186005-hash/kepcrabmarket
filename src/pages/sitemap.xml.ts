@@ -19,6 +19,12 @@ const pages = [
   { path: 'privacy-policy', priority: '0.3' },
   { path: 'terms-of-service', priority: '0.3' },
   { path: 'cookie-settings', priority: '0.3' },
+  // English-only topic pages — advertise only en + x-default so we never point
+  // hreflang at km/zh variants that do not exist.
+  { path: 'en/crab-prices', priority: '0.6', langs: ['en'] },
+  { path: 'en/how-to-buy-crab', priority: '0.6', langs: ['en'] },
+  { path: 'en/how-to-get-there', priority: '0.6', langs: ['en'] },
+  { path: 'en/kep-day-trip-from-kampot', priority: '0.6', langs: ['en'] },
 ];
 
 const xmlEscape = (value: string) =>
@@ -34,11 +40,10 @@ export const GET: APIRoute = () => {
 
   const entries = pages.flatMap((page) => {
     const alternates = buildAlternates(page.path);
+    const langs = page.langs ?? languagesList;
 
     const links = [
-      ['km', alternates.km],
-      ['en', alternates.en],
-      ['zh', alternates.zh],
+      ...langs.map((lang) => [lang, alternates[lang]] as [string, string]),
       ['x-default', alternates.xDefault],
     ]
       .map(
@@ -47,7 +52,7 @@ export const GET: APIRoute = () => {
       )
       .join('\n');
 
-    return languagesList.map((lang) =>
+    return langs.map((lang) =>
       [
         '  <url>',
         `    <loc>${xmlEscape(alternates[lang])}</loc>`,

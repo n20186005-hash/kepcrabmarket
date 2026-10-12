@@ -1,0 +1,34 @@
+---
+import TopicPage from '../../components/TopicPage.astro';
+
+const sections = [
+  {
+    heading: 'Pick live, active crab',
+    body: `<p>At Kep the crab is kept live in baskets or on ice, and that is what you want to buy. Look for <strong>movement</strong> and a firm, intact shell — a sluggish or damaged crab is past its best. A heavier crab for its size usually means more meat, so compare weight, not just how big it looks.</p>`,
+  },
+  {
+    heading: 'Watch the scale',
+    body: `<p>Crab is priced per kilogram and weighed in front of you. Confirm the reading on the stall's scale and the per-kg price <strong>before</strong> it is bagged up. If you are unsure, ask one stall, then check a second — the rates are usually close, and a big gap is a signal to slow down.</p>`,
+  },
+  {
+    heading: 'Agree the total before cooking',
+    body: `<p>If you want it cooked at one of the market restaurants, agree the <strong>all-in price</strong> first: crab weight × rate, plus the cooking fee, plus whether pepper sauce, vegetables and rice are included. Kampot pepper crab is the classic dish here, so ask specifically for it if that is what you came for.</p>`,
+  },
+  {
+    heading: 'Pay, language and timing',
+    body: `<p><strong>Cash</strong> is simplest and expected at the stalls. A few words of English go a long way, and pointing at what you want works fine. For the widest choice, come in the <strong>morning</strong>, when the overnight and early boats have landed; later in the day the best sizes may be gone.</p>
+    <p>Avoid pre-cooked crab that has been sitting out in the heat — fresh, cooked-to-order is the safer and better meal.</p>`,
+  },
+];
+
+const updated = 'October 2026';
+---
+
+<TopicPage
+  slug="how-to-buy-crab"
+  title="How to Buy Fresh Crab at Kep Crab Market"
+  description="Practical tips for buying fresh crab at Kep Crab Market in Cambodia: choosing live crab, checking the scale, agreeing the cooking price, paying and the best time to visit."
+  intro="Buying crab at Kep is straightforward once you know the routine. These tips help you choose well, agree a fair price and get it cooked the way you want."
+  updated={updated}
+  sections={sections}
+/>

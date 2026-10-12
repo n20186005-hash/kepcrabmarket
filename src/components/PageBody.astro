@@ -19,6 +19,10 @@ import Map from './Map.astro';
 import Reviews from './Reviews.astro';
 import Sources from './Sources.astro';
 import FAQ from './FAQ.astro';
+import TopicLinks from './TopicLinks.astro';
+import { getI18n } from '../i18n/ui';
+
+const { lang } = getI18n(Astro.url);
 ---
 
 <Hero />
@@ -30,6 +34,7 @@ import FAQ from './FAQ.astro';
 <Highlights />
 <BestTime />
 <Guide />
+{lang === 'en' && <TopicLinks />}
 <Transport />
 <Facilities />
 <Weather />

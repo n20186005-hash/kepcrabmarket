@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
+
+interface Section {
+  heading: string;
+  // Inline HTML is allowed here (our own, trusted content). Keep it simple:
+  // paragraphs, lists and <strong> only.
+  body: string;
+}
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  intro: string;
+  updated: string;
+  sections: Section[];
+}
+
+const { slug, title, description, intro, updated, sections } = Astro.props;
+const baseUrl = siteConfig.baseUrl;
+const url = `${baseUrl}/en/${slug}/`;
+// English-only topic pages: advertise only en + x-default so we never point
+// hreflang at non-existent km/zh variants.
+const alternates = { en: url, xDefault: url };
+const homeUrl = `${baseUrl}/en/`;
+---
+
+<BaseLayout title={title} description={description} alternates={alternates}>
+  <article class="mx-auto max-w-3xl px-4 py-10">
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-500">
+      <a href={homeUrl} class="hover:underline">Home</a>
+      <span class="px-2">›</span>
+      <span class="text-gray-700">{title}</span>
+    </nav>
+
+    <h1 class="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl">{title}</h1>
+    <p class="mb-8 text-lg leading-relaxed text-gray-600">{intro}</p>
+
+    {sections.map((s) => (
+      <section class="mb-8">
+        <h2 class="mb-2 text-2xl font-semibold text-gray-900">{s.heading}</h2>
+        <div class="leading-relaxed text-gray-700" set:html={s.body} />
+      </section>
+    ))}
+
+    <p class="mt-10 border-t border-gray-200 pt-4 text-sm text-gray-500">
+      Last reviewed {updated}. Crab prices, cooking fees and transport options change — confirm the current situation at the market before you buy.
+    </p>
+
+    <nav class="mt-6">
+      <a href={homeUrl} class="font-medium text-emerald-700 hover:underline">← Back to the Kep Crab Market guide</a>
+    </nav>
+  </article>
+</BaseLayout>

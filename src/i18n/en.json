@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Kep Crab Market (Kep Seafood Market): Hours & Location Map",
-    "description": "Kep Crab Market in Krong Kaeb, Cambodia — rated 4.1★ on Google (5,600+ reviews). Opening hours, what's sold, how to get there, and a live location map.",
+    "title": "Kep Crab Market: Opening Hours, Seafood & Visitor Guide",
+    "description": "Explore Kep Crab Market in Cambodia. Find opening hours, fresh crab buying tips, directions, local seafood and practical advice for planning your visit.",
     "entityDescription": "Comprehensive visitor guide to Kep Crab Market in Kep, Kep Province, Cambodia.",
-    "ogTitle": "Kep Crab Market - Kep Travel Guide",
-    "ogDescription": "Independent visitor guide to Kep Crab Market in Kep, Kep Province, Cambodia.",
+    "ogTitle": "Kep Crab Market: Opening Hours, Seafood & Visitor Guide",
+    "ogDescription": "Explore Kep Crab Market in Cambodia — opening hours, fresh crab buying tips, directions, local seafood and practical advice for your visit.",
     "ogImageAlt": "Kep Crab Market in Kep, Cambodia",
     "keywords": "Kep Crab Market, Kep Cambodia, crab market, Kampot pepper crab, Kep travel guide, Kep seafood, Cambodia coast, Kep history",
     "touristType": ["Seafood lovers", "Families", "Independent travelers", "Photographers", "Eco-tourists"]
@@ -17,7 +17,7 @@
     "badge": "Kep · Cambodia",
     "title": "Kep Crab Market (ផ្សារក្ដាមក្រុងកែប)",
     "subtitle": "Kep Seafood Market · 白马螃蟹市场",
-    "tagline": "Kep's most famous seafood market — fresh crab, a working fishing town, and the giant 'Crab King' monument by the Gulf of Thailand.",
+    "tagline": "Kep's most famous seafood market — fresh crab, a working fishing town, and the giant 'Crab King' monument near Kep Beach.",
     "cta": "Plan your visit",
     "ctaExplore": "Explore the highlights",
     "imageAlt": "Kep Crab Market - main view in Kep, Cambodia",
@@ -70,11 +70,11 @@
   },
   "about": {
     "title": "About Kep Crab Market",
-    "lead": "Welcome to Kep Crab Market (ផ្សារក្ដាមក្រុងកែប), widely recognised as the Kep Crab Market — the landmark that gives the {domain} domain its meaning. Located in the heart of Kep, Kep Province, Cambodia, this destination serves as a primary hub for travellers visiting the region.",
+    "lead": "Welcome to Kep Crab Market (ផ្សារក្ដាមក្រុងកែប), widely recognised as the Kep Crab Market — the coastal landmark that defines Kep's crab-loving identity. Located in the heart of Kep, Kep Province, Cambodia, this destination serves as a primary hub for travellers visiting the region.",
     "geo": ["Kep Crab Market", "Kep", "Kep Province", "Cambodia"],
     "body": [
       "Kep Crab Market (ផ្សារក្ដាមក្រុងកែប) is the best-known landmark of Kep, a small coastal province in southern Cambodia. It sits on the Gulf of Thailand, where fishing boats land their catch and vendors sell crab, fish, and shellfish straight from the water.",
-      "The market is simple and working-class rather than polished. Wooden and tin stalls line the shore; ice boxes hold the day's crab; and just behind the stalls, the giant red 'Crab King' monument has become the town's symbol.",
+      "The market is simple and working-class rather than polished. Wooden and tin stalls line the shore; ice boxes hold the day's crab; a short drive away, near Kep Beach, the giant red 'Crab King' monument has become the town's symbol.",
       "This guide is independent and non-commercial. We describe the place, its history, and its practical details so you can visit with realistic expectations — without promoting any single vendor or business."
     ]
   },
@@ -100,7 +100,7 @@
       {
         "period": "Late 1990s",
         "title": "The Crab Monument",
-        "text": "As Kep recovered, the town raised a giant crab statue — locally known as the 'Crab King' — at the entrance to the seafood market. It quickly became the symbol of Kep's identity and its crab trade."
+        "text": "As Kep recovered, the town raised a giant crab statue — locally known as the 'Crab King' — near Kep Beach, about 1.5 km from the crab market. It quickly became the symbol of Kep's identity and its crab trade."
       },
       {
         "period": "Today",
@@ -142,7 +142,7 @@
     "legend": {
       "title": "The 'Crab King' and its meaning",
       "body": [
-        "The giant red crab statue that guards the market is often called the 'Crab King' by locals and visitors alike.",
+        "The giant red crab statue near Kep Beach is often called the 'Crab King' by locals and visitors alike.",
         "More than a photo spot, it is a civic symbol: the crab represents the sea's generosity and the town's recovery after difficult years. For many in Kep, the statue marks the moment the town chose to rebuild its identity around the ocean that feeds it.",
         "Stories told by local vendors mix fact and fondness — some say the crab brings good luck to the fishing families, others simply smile and call it 'the king of Kep'. Whether legend or local pride, it captures the spirit of the place."
       ]
@@ -201,7 +201,7 @@
       {
         "icon": "📸",
         "title": "The Crab King",
-        "desc": "The giant crab monument at the entrance is Kep's most-photographed landmark."
+        "desc": "The giant crab monument near Kep Beach, about 1.5 km from the market, is Kep's most-photographed landmark."
       }
     ]
   },
@@ -842,7 +842,7 @@
         {
           "icon": "🌊",
           "title": "At high water",
-          "desc": "The water reaches the steps and the shallows fill. This is when the quay is busiest: boats come alongside, ice is unloaded and the morning's catch changes hands. It is also the only time the shallows hold enough water to swim."
+          "desc": "The water reaches the steps and the shallows fill. This is when the quay is busiest: boats come alongside, ice is unloaded and the morning's catch changes hands. The shallows fill with water and the quay is busiest then — but this is a working fishing front, not a place to swim; head to a recognised beach for that."
         },
         {
           "icon": "🦀",
@@ -1014,7 +1014,7 @@
       },
       {
         "q": "Is the giant crab statue worth a visit?",
-        "a": "Yes — the 'Crab King' at the market entrance is Kep's most photographed landmark and a good orientation point. It is free to view."
+        "a": "Yes — the giant 'Crab King' monument near Kep Beach (about 1.5 km from the crab market) is Kep's most photographed landmark and a good orientation point. It is free to view."
       },
       {
         "q": "Is Kep Crab Market suitable for children and seniors?",
@@ -1026,7 +1026,7 @@
       },
       {
         "q": "Is Kep Crab Market the same as Kep Seafood Market?",
-        "a": "Yes — it is one and the same waterfront market in Kep town. English listings often call it 'Kep Seafood Market'; the Khmer name is ផ្សារក្ដាមក្រុងកែប, and the giant crab statue at the entrance is the easiest landmark for it."
+        "a": "Yes — it is one and the same waterfront market in Kep town. English listings often call it 'Kep Seafood Market'; the Khmer name is ផ្សារក្ដាមក្រុងកែប, and the giant crab statue near Kep Beach is the easiest landmark for it."
       },
       {
         "q": "What else is there to do near Kep Crab Market?",
@@ -1041,8 +1041,8 @@
     "countLabel": "Google Maps reviews",
     "categoryLabel": "Category",
     "outOf": "out of 5",
-    "sourceNote": "Synced from Google Maps user reviews, snapshot September 2026; copyright remains with the original reviewers and Google Maps.",
-    "syncLine": "Rating and review count synced from Google Maps user reviews · September 2026 · View all reviews on Google Maps ↗",
+    "sourceNote": "Synced from Google Maps user reviews, snapshot October 2026; copyright remains with the original reviewers and Google Maps.",
+    "syncLine": "Rating and review count synced from Google Maps user reviews · October 2026 · View all reviews on Google Maps ↗",
     "button": "View all reviews on Google Maps",
     "ariaLabel": "Kep Crab Market rating and review count, cited from Google Maps"
   },
@@ -1050,7 +1050,7 @@
     "title": "Sources & Attribution",
     "intro": "This independent guide cites the public sources listed below, with the attribution and rights statement for each item.",
     "reviewLabel": "Ratings & reviews",
-    "reviewSync": "Synced September 2026",
+    "reviewSync": "Synced October 2026",
     "mapsLinkLabel": "View all reviews on Google Maps",
     "geoLabel": "Location & coordinates",
     "mapsLinkGeo": "Kep Crab Market on Google Maps",

@@ -9,16 +9,19 @@ import { ogLocale, siteConfig, attraction, heroImage, jsonLdImages } from '../co
 interface Props {
   title?: string;
   description?: string;
+  // Allows a page to override the canonical/hreflang map (e.g. English-only
+  // topic pages that should not advertise non-existent km/zh alternates).
+  alternates?: Record<string, string>;
 }
 
-const { title, description } = Astro.props;
+const { title, description, alternates } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const htmlLang = htmlLangAttr(lang);
 // Canonical and hreflang come from the page's own path, so sub-pages such as
 // /en/privacy-policy/ point at themselves in every language instead of all
 // claiming the home page as their canonical.
 const pagePath = pathWithoutLang(Astro.url);
-const alts = buildAlternates(pagePath);
+const alts = alternates ?? buildAlternates(pagePath);
 const canonical = alts[lang] ?? alts.km;
 const isHome = pagePath === '';
 const { messages } = getI18n(Astro.url);
@@ -129,10 +132,9 @@ gtag('config', '${siteConfig.ga4Id}');`}
     <meta name="description" content={pageDesc} />
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="alternate" hreflang="km" href={alts.km} />
-    <link rel="alternate" hreflang="en" href={alts.en} />
-    <link rel="alternate" hreflang="zh" href={alts.zh} />
-    <link rel="alternate" hreflang="x-default" href={alts.xDefault} />
+    {Object.entries(alts).map(([h, l]) => (
+      <link rel="alternate" hreflang={h} href={l} />
+    ))}
 
     <!-- Open Graph / social -->
     <meta property="og:site_name" content={siteConfig.name} />

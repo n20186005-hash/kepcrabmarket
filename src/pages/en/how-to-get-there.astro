@@ -1,0 +1,34 @@
+---
+import TopicPage from '../../components/TopicPage.astro';
+
+const sections = [
+  {
+    heading: 'From Kampot',
+    body: `<p>Kampot is the most common jumping-off point. The market is roughly <strong>25–30 km</strong> away, about a <strong>35–45 minute</strong> drive depending on road and traffic. Options are a <strong>tuk-tuk</strong> (cheapest, slowest), a shared taxi, a private taxi, or a motorbike/moto if you are comfortable riding. Agree the fare before you set off, and allow extra time if you want to stop on the way.</p>`,
+  },
+  {
+    heading: 'From Phnom Penh',
+    body: `<p>From the capital, take a <strong>bus or taxi to Kep</strong> (roughly 2.5–3 hours), then a short tuk-tuk or moto from the Kep bus point to the seafront market. Some travellers do Kampot as a base and day-trip to Kep, which keeps the final leg short.</p>`,
+  },
+  {
+    heading: 'Within Kep',
+    body: `<p>The crab market sits on the <strong>Kep seafront</strong>, a short ride from the town centre and from most guesthouses. Many visitors simply walk the waterfront or take a passing tuk-tuk. There is roadside parking for motos and cars near the stalls.</p>
+    <p>Note: the famous giant blue <strong>"Crab King" statue is near Kep Beach, about 1.5 km from the crab market</strong> — a different spot. Don't confuse the two when giving directions to a driver.</p>`,
+  },
+  {
+    heading: 'Finding it on the map',
+    body: `<p>The market's coordinates are <strong>10.4865° N, 104.3051° E</strong> (Plus Code F7QQ+HG4, Krong Kaeb). A driver can also simply be pointed to "Kep Crab Market" — it is the well-known seafood row on the water.</p>`,
+  },
+];
+
+const updated = 'October 2026';
+---
+
+<TopicPage
+  slug="how-to-get-there"
+  title="How to Get to Kep Crab Market (from Kampot & Phnom Penh)"
+  description="Directions to Kep Crab Market in Cambodia: getting there from Kampot by tuk-tuk or taxi, from Phnom Penh by bus, and the short hop from Kep town centre to the seafront."
+  intro="Kep Crab Market is an easy trip from Kampot and a straightforward half-day from Phnom Penh. Here is how to reach the seafront market."
+  updated={updated}
+  sections={sections}
+/>

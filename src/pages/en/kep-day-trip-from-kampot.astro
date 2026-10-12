@@ -1,0 +1,39 @@
+---
+import TopicPage from '../../components/TopicPage.astro';
+
+const sections = [
+  {
+    heading: 'Why Kampot → Kep works as a day trip',
+    body: `<p>Kampot and Kep are close enough that a relaxed day trip is easy: you can keep Kampot as your base, spend the morning there, and be at the Kep Crab Market for lunch. The drive is only about <strong>35–45 minutes</strong>, so you are not rushed.</p>`,
+  },
+  {
+    heading: 'A simple itinerary',
+    body: `<ul class="list-disc space-y-1 pl-5">
+      <li><strong>Morning:</strong> explore Kampot — a pepper plantation, the riverside, or Bokor's lower viewpoints — then grab an early tuk-tuk or taxi toward Kep.</li>
+      <li><strong>Late morning:</strong> arrive at the Kep Crab Market, browse the stalls, and pick live crab to be cooked.</li>
+      <li><strong>Lunch:</strong> eat your pepper crab at one of the market restaurants on the water.</li>
+      <li><strong>Afternoon:</strong> walk the Kep seafront, visit Kep Beach and the giant "Crab King" statue (about 1.5 km from the market), or stroll Kep National Park.</li>
+      <li><strong>Late afternoon:</strong> catch the sunset over the Gulf of Thailand before heading back to Kampot.</li>
+    </ul>`,
+  },
+  {
+    heading: 'Transport and timing tips',
+    body: `<p>Hire a <strong>return tuk-tuk or taxi</strong> for the day so the ride back is sorted — agree the waiting time and round-trip fare up front. If you prefer independence, a motorbike gives you the freedom to stop at pepper farms and viewpoints along the way. Build in buffer time: crab is best at lunch, and the beach light is best later in the day.</p>`,
+  },
+  {
+    heading: 'What to combine it with',
+    body: `<p>Kep pairs naturally with <strong>Kampot pepper</strong> (the crab-and-pepper combo is the local signature), with <strong>Kep National Park</strong> for a short forest walk, and with nearby <strong>Rabbit Island (Koh Tonsay)</strong> if you want beach time added to the day.</p>`,
+  },
+];
+
+const updated = 'October 2026';
+---
+
+<TopicPage
+  slug="kep-day-trip-from-kampot"
+  title="Kep Crab Market Day Trip from Kampot: Itinerary"
+  description="Plan a Kampot to Kep day trip around the Crab Market: a simple itinerary, transport tips, timing and what to combine it with for a relaxed Cambodia coast day out."
+  intro="A Kampot-to-Kep day trip is one of the easiest and most rewarding runs on Cambodia's coast. Here is a workable plan built around lunch at the crab market."
+  updated={updated}
+  sections={sections}
+/>

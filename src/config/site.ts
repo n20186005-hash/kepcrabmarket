@@ -97,10 +97,10 @@ export const attraction = {
   // Google Maps attribution and are deliberately NOT emitted as aggregateRating
   // / review structured data.
   rating: 4.1,
-  reviewCount: 5618,
-  reviewsSyncedISO: '2026-09',
+  reviewCount: 5634,
+  reviewsSyncedISO: '2026-10',
   reviewsSyncYear: 2026,
-  reviewsSyncMonth: 9,
+  reviewsSyncMonth: 10,
 
   // Practical facts ---------------------------------------------------------
   hoursOpen: '05:00',

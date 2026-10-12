@@ -1,0 +1,35 @@
+---
+import TopicPage from '../../components/TopicPage.astro';
+
+const sections = [
+  {
+    heading: 'How crab is priced at Kep Crab Market',
+    body: `<p>Crab at the market is sold <strong>by weight</strong>, usually priced per kilogram and weighed on the stall's own scale in front of you. You are generally choosing between <strong>live crab</strong> (kept in baskets or ice boxes) and crab that a nearby restaurant will cook for you. Live, unprocessed crab costs less than a plated dish, because the cooking, sides and service are added on top.</p>
+    <p>Two things move the price most: <strong>size</strong> and <strong>species</strong>. Larger crabs and the prized blue swimmer crab (sometimes called Kep crab) tend to cost more per kilogram than smaller or commoner kinds. Prices also shift with the season and with how good the catch has been that week.</p>`,
+  },
+  {
+    heading: 'A realistic way to budget',
+    body: `<p>Rather than a fixed menu, think of it as two steps: the <strong>crab itself</strong> (weighed and priced by the kg) plus a <strong>cooking and service charge</strong> if you eat at one of the market restaurants. A sensible approach is to agree the total — crab weight, price, and cooking fee — <strong>before</strong> it goes on the grill, and to confirm whether pepper sauce, sides and rice are included.</p>
+    <p>If you only want to take crab home, buy it live and have it cleaned; you then skip the restaurant markup entirely. Many travellers compare the per-kg rate at two or three stalls before deciding.</p>`,
+  },
+  {
+    heading: 'Bargaining and paying',
+    body: `<p>Bargaining is normal at the stall level, especially if you are buying several crabs. <strong>Cash</strong> is the easiest way to pay and is expected at most stalls. Check the reading on the scale yourself, and don't be shy about asking the price for "one crab, cooked" all-in so there are no surprises.</p>`,
+  },
+  {
+    heading: 'Why we do not publish a fixed price list',
+    body: `<p>Crab prices at Kep change week to week with the catch, fuel costs and demand, and we are not the market operator. Publishing a single "today's price" would quickly go out of date and mislead you. Treat the notes above as a <strong>pricing model</strong>, then confirm the actual rate with the stall when you arrive. A photo of the market's real price board, with the date, is far more useful than any number we could print here.</p>`,
+  },
+];
+
+const updated = 'October 2026';
+---
+
+<TopicPage
+  slug="crab-prices"
+  title="Kep Crab Market Prices: How Crab Is Priced in 2026"
+  description="How crab is priced at Kep Crab Market in Cambodia — by weight, by species and by season — plus a realistic way to budget for live crab and a cooked meal, without relying on a fixed price list."
+  intro="Crab at Kep is sold by weight, not from a fixed menu. Here is how the pricing actually works so you can budget and avoid surprises at the stall."
+  updated={updated}
+  sections={sections}
+/>
