@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { nearbyGuides, guideUrl, type NearbyLang, type NearbySlug } from '../data/nearbyGuides';
+import { siteConfig, attraction } from '../config/site';
+
+interface Props { lang: NearbyLang; slug: NearbySlug }
+const { lang, slug } = Astro.props;
+const guide = nearbyGuides[slug];
+const value = (obj: Record<NearbyLang, string>) => obj[lang];
+const home = lang === 'km' ? '/' : `/${lang}/`;
+const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(guide.query)}`;
+const alternates = {
+  km: `${siteConfig.baseUrl}${guideUrl('km', slug)}`,
+  en: `${siteConfig.baseUrl}${guideUrl('en', slug)}`,
+  zh: `${siteConfig.baseUrl}${guideUrl('zh', slug)}`,
+  xDefault: `${siteConfig.baseUrl}${guideUrl('en', slug)}`,
+};
+const labels = {
+  en: { home: 'Kep Crab Market', explore: 'Explore this place', about: 'Background and setting', facts: 'Visitor essentials', location: 'Location', time: 'Visiting time', cost: 'Admission and costs', timing: 'Check locally; conditions may change', route: 'Suggested visit', highlights: 'What to look for', transport: 'Getting there', faq: 'Before you go', sources: 'Sources and checks', map: 'Open this place in Google Maps', near: 'More places around Kep', return: 'Back to Crab Market', reviewed: 'Information checked 16 November 2026. Confirm current access, prices and transport locally.' },
+  zh: { home: '凯普螃蟹市场', explore: '探索景点', about: '背景与特色', facts: '基本资料', location: '位置', time: '建议停留', cost: '门票与费用', timing: '以现场实际情况为准', route: '建议游览路线', highlights: '观察重点', transport: '交通方式', faq: '出发前须知', sources: '资料来源', map: '在 Google 地图查看此地点', near: '更多凯普周边景点', return: '返回螃蟹市场', reviewed: '资料核对日期：2026 年 11 月 16 日。开放、费用及交通请现场核实。' },
+  km: { home: 'ផ្សារក្តាមកែប', explore: 'ស្វែងយល់ទីកន្លែង', about: 'ប្រវត្តិ និងបរិបទ', facts: 'ព័ត៌មានសម្រាប់ភ្ញៀវ', location: 'ទីតាំង', time: 'រយៈពេលទស្សនា', cost: 'ថ្លៃចូល និងចំណាយ', timing: 'សូមពិនិត្យនៅទីតាំង', route: 'ផ្លូវទស្សនាណែនាំ', highlights: 'ចំណុចគួរមើល', transport: 'ការធ្វើដំណើរ', faq: 'មុនពេលទៅ', sources: 'ប្រភពព័ត៌មាន', map: 'មើលទីតាំងនេះក្នុង Google Maps', near: 'កន្លែងផ្សេងទៀតនៅកែប', return: 'ត្រឡប់ទៅផ្សារក្តាម', reviewed: 'ពិនិត្យព័ត៌មានថ្ងៃទី ១៦ វិច្ឆិកា ២០២៦។ សូមផ្ទៀងផ្ទាត់ផ្លូវ ថ្លៃ និងមធ្យោបាយធ្វើដំណើរនៅទីតាំង។' },
+}[lang];
+const suggested = {en: 'Begin with the main access point, follow the established visitor route, take a break at the main viewpoint or waterfront, then return without rushing.', zh: '从主要入口开始，沿既有游览道路参观，在观景处或海滨适当停留，再从容返回。', km: 'ចាប់ផ្ដើមពីច្រកសំខាន់ ដើរតាមផ្លូវទស្សនា សម្រាកនៅចំណុចមើលទេសភាព ឬមាត់សមុទ្រ រួចត្រឡប់ដោយមិនប្រញាប់។'}[lang];
+const duration = slug === 'koh-tonsay' ? {en:'Half day or longer, including boat travel',zh:'半天或更长（含船程）',km:'កន្លះថ្ងៃ ឬយូរជាងនេះ រួមទាំងជិះទូក'}[lang] : slug === 'kep-national-park' ? {en:'1–3 hours depending on route',zh:'依路线约 1–3 小时',km:'១–៣ ម៉ោង តាមផ្លូវដែលជ្រើស'}[lang] : {en:'30–90 minutes',zh:'约 30–90 分钟',km:'៣០–៩០ នាទី'}[lang];
+---
+<BaseLayout title={`${value(guide.name)} | Kep travel guide`} description={value(guide.intro)} alternates={alternates}>
+  <article class="mx-auto max-w-4xl px-4 pb-14 pt-24">
+    <nav class="mb-5 text-sm text-gray-500" aria-label="Breadcrumb"><a class="text-sky-700 hover:underline" href={home}>{labels.home}</a> › {value(guide.name)}</nav>
+    <h1 class="text-3xl font-bold text-sky-950 sm:text-4xl">{value(guide.name)}</h1>
+    <p class="mt-3 text-xl text-gray-600">{value(guide.subtitle)}</p>
+    <div class="mt-6 flex flex-wrap gap-3"><a class="rounded-full bg-sky-700 px-5 py-3 font-medium text-white hover:bg-sky-800" href={map} target="_blank" rel="noopener noreferrer">📍 {labels.map}</a><a class="rounded-full border border-sky-700 px-5 py-3 text-sky-800" href={home}>{labels.return}</a></div>
+    <section class="mt-12"><h2 class="text-2xl font-bold text-sky-950">{labels.explore}</h2><p class="mt-4 leading-8 text-gray-700">{value(guide.intro)}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.about}</h2><p class="mt-4 leading-8 text-gray-700">{value(guide.history)}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.facts}</h2><dl class="mt-4 divide-y rounded-xl border bg-white px-5"><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{labels.location}</dt><dd class="sm:col-span-2">{value(guide.name)} · Kep Province, Cambodia</dd></div><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{labels.time}</dt><dd class="sm:col-span-2">{duration}</dd></div><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{labels.cost}</dt><dd class="sm:col-span-2">{labels.timing}</dd></div></dl></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.transport}</h2><p class="mt-4 leading-8 text-gray-700">{value(guide.access)}</p><a class="mt-3 inline-block text-sky-700 underline" href={map} rel="noopener noreferrer" target="_blank">{labels.map}</a></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.highlights}</h2><ol class="mt-4 list-decimal space-y-3 pl-6 leading-7 text-gray-700">{guide.highlights[lang].map(item => <li>{item}</li>)}</ol></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.route}</h2><p class="mt-4 leading-8 text-gray-700">{suggested}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.faq}</h2><p class="mt-4 leading-8 text-gray-700">{value(guide.access)}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.near}</h2><div class="mt-4 grid gap-3 sm:grid-cols-3">{Object.entries(nearbyGuides).filter(([key]) => key !== slug).map(([key, item]) => <a class="rounded-xl border bg-white p-4 font-semibold text-sky-800 hover:border-sky-600" href={guideUrl(lang, key as NearbySlug)}>{item.name[lang]} →</a>)}</div></section>
+    <section class="mt-10 border-t pt-6 text-sm text-gray-600"><h2 class="text-lg font-bold text-sky-950">{labels.sources}</h2><p class="mt-2">{labels.reviewed}</p><ul class="mt-3 list-disc pl-5"><li><a class="text-sky-700 underline" href={guide.source}>Cambodia coastal tourism reference</a></li><li><a class="text-sky-700 underline" href={attraction.mapsUrl}>Kep Crab Market map</a></li></ul></section>
+  </article>
+</BaseLayout>

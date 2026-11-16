@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro';
 import { buildAlternates, languagesList } from '../i18n/ui';
+import { nearbyGuides } from '../data/nearbyGuides';
+import { siteConfig } from '../config/site';
 
 export const prerender = true;
 
@@ -25,6 +27,7 @@ const pages = [
   { path: 'en/how-to-buy-crab', priority: '0.6', langs: ['en'] },
   { path: 'en/how-to-get-there', priority: '0.6', langs: ['en'] },
   { path: 'en/kep-day-trip-from-kampot', priority: '0.6', langs: ['en'] },
+  ...Object.keys(nearbyGuides).map(slug => ({ path: `attractions/${slug}`, priority: '0.7' })),
 ];
 
 const xmlEscape = (value: string) =>
@@ -39,7 +42,9 @@ export const GET: APIRoute = () => {
   const lastmod = new Date().toISOString().slice(0, 10);
 
   const entries = pages.flatMap((page) => {
-    const alternates = buildAlternates(page.path);
+    const alternates = page.langs?.length === 1 && page.langs[0] === 'en'
+      ? { en: `${siteConfig.baseUrl}/${page.path}/`, xDefault: `${siteConfig.baseUrl}/${page.path}/` }
+      : buildAlternates(page.path);
     const langs = page.langs ?? languagesList;
 
     const links = [
