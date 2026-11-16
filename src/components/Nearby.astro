@@ -1,7 +1,9 @@
 ---
 import { getI18n } from '../i18n/ui';
-const { messages } = getI18n(Astro.url);
+import { nearbyGuides, guideUrl, type NearbySlug, type NearbyLang } from '../data/nearbyGuides';
+const { messages, lang } = getI18n(Astro.url);
 const n = messages.nearby;
+const moreTitle = { en: 'Explore Kep in detail', zh: '深入探索凯普周边', km: 'ស្វែងយល់បន្ថែមអំពីកែប' }[lang];
 ---
 <section id="nearby" class="mx-auto max-w-6xl px-4 py-14">
   <h2 class="text-3xl font-bold text-gray-900">{n.title}</h2>
@@ -23,5 +25,15 @@ const n = messages.nearby;
         </div>
       ))
     }
+  </div>
+  <h3 class="mt-9 text-xl font-bold text-gray-900">{moreTitle}</h3>
+  <div class="mt-4 grid gap-4 sm:grid-cols-3">
+    {Object.entries(nearbyGuides).map(([slug, guide]) => (
+      <a href={guideUrl(lang as NearbyLang, slug as NearbySlug)} class="rounded-xl border border-sky-100 bg-sky-50 p-5 transition hover:border-sky-500 hover:shadow-sm">
+        <span class="font-semibold text-sky-900">{guide.name[lang as NearbyLang]}</span>
+        <p class="mt-2 text-sm leading-relaxed text-gray-600">{guide.subtitle[lang as NearbyLang]}</p>
+        <span class="mt-3 inline-block text-sm font-semibold text-sky-700">→</span>
+      </a>
+    ))}
   </div>
 </section>

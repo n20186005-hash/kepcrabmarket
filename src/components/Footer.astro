@@ -39,6 +39,8 @@ const legalLinks = [
   { key: 'terms', href: `${prefix}/terms-of-service` },
   { key: 'cookie', href: `${prefix}/cookie-settings` },
 ];
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/zh/';
+const anchorPrefix = isHome ? '' : langHrefs[lang];
 ---
 <footer class="mt-8 bg-sky-950 text-sky-50">
   <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
@@ -64,7 +66,7 @@ const legalLinks = [
         {
           navItems.map((item) => (
             <li>
-              <a href={item.href} class="text-sky-100/80 transition hover:text-white">
+              <a href={`${anchorPrefix}${item.href}`} class="text-sky-100/80 transition hover:text-white">
                 {messages.nav[item.key]}
               </a>
             </li>

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { nearbyGuides, guideUrl, type NearbyLang, type NearbySlug } from '../data/nearbyGuides';
+import { siteConfig } from '../config/site';
+import { nearbyDetails } from '../data/nearbyDetails';
+import { nearbyVisitor } from '../data/nearbyVisitor';
+
+interface Props { lang: NearbyLang; slug: NearbySlug }
+const { lang, slug } = Astro.props;
+const guide = nearbyGuides[slug];
+const detail = nearbyDetails[slug];
+const visitor = nearbyVisitor[slug];
+const value = (obj: Record<NearbyLang, string>) => obj[lang];
+const home = lang === 'km' ? '/' : `/${lang}/`;
+const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(detail.mapQuery)}`;
+const alternates = {
+  km: `${siteConfig.baseUrl}${guideUrl('km', slug)}`,
+  en: `${siteConfig.baseUrl}${guideUrl('en', slug)}`,
+  zh: `${siteConfig.baseUrl}${guideUrl('zh', slug)}`,
+  xDefault: `${siteConfig.baseUrl}${guideUrl('en', slug)}`,
+};
+const labels = {
+  en: { home: 'Kep Crab Market', explore: 'Explore this place', about: 'About this place and who manages it', facts: 'Visitor essentials', location: 'Location', time: 'Visiting time', cost: 'Admission and costs', timing: 'Check locally; conditions may change', route: 'Suggested walking route', highlights: 'What to look for', transport: 'Getting there', faq: 'Frequently asked questions', sources: 'Sources and checks', map: 'Open this place in Google Maps', near: 'More places around Kep', return: 'Back to Crab Market', reviewed: 'Information checked 16 November 2026. Confirm current access, prices and transport locally.', architecture:'Landscape and built features', photos:'Photography advice', gallery:'Photograph of this place' },
+  zh: { home: '凯普螃蟹市场', explore: '探索景点', about: '关于景点及管理主体', facts: '基本资料', location: '位置', time: '建议停留', cost: '门票与费用', timing: '以现场实际情况为准', route: '建议步行路线', highlights: '观察重点', transport: '交通方式', faq: '常见问答', sources: '资料来源', map: '在 Google 地图查看此地点', near: '更多凯普周边景点', return: '返回螃蟹市场', reviewed: '资料核对日期：2026 年 11 月 16 日。开放、费用及交通请现场核实。',architecture:'建筑与景观特色',photos:'拍照机位建议',gallery:'景点实景照片' },
+  km: { home: 'ផ្សារក្តាមកែប', explore: 'ស្វែងយល់ទីកន្លែង', about: 'អំពីទីកន្លែង និងអ្នកគ្រប់គ្រង', facts: 'ព័ត៌មានសម្រាប់ភ្ញៀវ', location: 'ទីតាំង', time: 'រយៈពេលទស្សនា', cost: 'ថ្លៃចូល និងចំណាយ', timing: 'សូមពិនិត្យនៅទីតាំង', route: 'ផ្លូវដើរណែនាំ', highlights: 'ចំណុចគួរមើល', transport: 'ការធ្វើដំណើរ', faq: 'សំណួរញឹកញាប់', sources: 'ប្រភពព័ត៌មាន', map: 'មើលទីតាំងនេះក្នុង Google Maps', near: 'កន្លែងផ្សេងទៀតនៅកែប', return: 'ត្រឡប់ទៅផ្សារក្តាម', reviewed: 'ពិនិត្យព័ត៌មានថ្ងៃទី ១៦ វិច្ឆិកា ២០២៦។ សូមផ្ទៀងផ្ទាត់ផ្លូវ ថ្លៃ និងមធ្យោបាយធ្វើដំណើរនៅទីតាំង។', architecture:'ទេសភាព និងសំណង់',photos:'កន្លែងថតរូប',gallery:'រូបថតទីតាំងពិត' },
+}[lang];
+const duration = slug === 'koh-tonsay' ? {en:'Half day or longer, including boat travel',zh:'半天或更长（含船程）',km:'កន្លះថ្ងៃ ឬយូរជាងនេះ រួមទាំងជិះទូក'}[lang] : slug === 'kep-national-park' ? {en:'1–3 hours depending on route',zh:'依路线约 1–3 小时',km:'១–៣ ម៉ោង តាមផ្លូវដែលជ្រើស'}[lang] : {en:'30–90 minutes',zh:'约 30–90 分钟',km:'៣០–៩០ នាទី'}[lang];
+const moreLabels = {
+  en:{type:'Attraction type',manager:'Management',hours:'Opening hours',price:'Tickets and prices',advice:'Visiting tips',culture:'Cultural context',experience:'The core experience',stay:'Where to stay',reviews:'Visitor feedback',directions:'Address and map',rating:'Google rating',unverified:'No independently verified current rating',visit:'Suggested duration',source:'View current reviews',arrive:'Travel planning',official:'Confirm current opening and access at the entrance',tips:'Visit tips'},
+  zh:{type:'景点类型',manager:'管理主体',hours:'开放时间',price:'门票与费用',advice:'游览须知',culture:'文化背景',experience:'核心体验',stay:'住宿建议',reviews:'游客评价',directions:'交通指南与详细位置',rating:'Google 评分',unverified:'暂无独立核实的最新评分',visit:'建议停留',source:'查看最新游客评价',arrive:'交通安排',official:'具体开放及通行情况请在入口现场核实',tips:'游览建议'},
+  km:{type:'ប្រភេទទីកន្លែង',manager:'អង្គភាពគ្រប់គ្រង',hours:'ម៉ោងបើក',price:'សំបុត្រ និងតម្លៃ',advice:'ការណែនាំសម្រាប់ភ្ញៀវ',culture:'វប្បធម៌ និងប្រវត្តិ',experience:'បទពិសោធន៍សំខាន់',stay:'កន្លែងស្នាក់នៅ',reviews:'មតិភ្ញៀវ',directions:'អាសយដ្ឋាន និងផែនទី',rating:'ពិន្ទុ Google',unverified:'មិនទាន់ផ្ទៀងផ្ទាត់ពិន្ទុថ្មី',visit:'រយៈពេលទស្សនា',source:'មើលមតិថ្មីៗ',arrive:'ផែនការធ្វើដំណើរ',official:'សូមពិនិត្យព័ត៌មានចូលទស្សនានៅទីតាំង',tips:'ការណែនាំទស្សនា'},
+}[lang];
+const structuredData = {
+  '@context':'https://schema.org', '@type':'TouristAttraction',
+  '@id':`${siteConfig.baseUrl}${guideUrl(lang,slug)}#place`,
+  name:value(guide.name), description:value(guide.intro),
+  url:`${siteConfig.baseUrl}${guideUrl(lang,slug)}`,
+  image:`${siteConfig.baseUrl}/nearby/${slug}.jpg`,
+  address:{'@type':'PostalAddress',addressLocality:'Kep',addressRegion:'Kep Province',addressCountry:'KH'},
+  hasMap:map,
+};
+const structuredFaq = { '@context':'https://schema.org', '@type':'FAQPage', mainEntity: detail.faq[lang].map(item => ({'@type':'Question',name:item.q,acceptedAnswer:{'@type':'Answer',text:item.a}})) };
+---
+<BaseLayout title={`${value(guide.name)} | ${labels.home}`} description={value(guide.intro)} alternates={alternates}>
+  <Fragment slot="head"><script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} /><script type="application/ld+json" is:inline set:html={JSON.stringify(structuredFaq)} /></Fragment>
+  <article class="mx-auto max-w-4xl px-4 pb-14 pt-24">
+    <nav class="mb-5 text-sm text-gray-500" aria-label="Breadcrumb"><a class="text-sky-700 hover:underline" href={home}>{labels.home}</a> › {value(guide.name)}</nav>
+    <h1 class="text-3xl font-bold text-sky-950 sm:text-4xl">{value(guide.name)}</h1>
+    <p class="mt-3 text-xl text-gray-600">{value(guide.subtitle)}</p>
+    <div class="mt-6 flex flex-wrap gap-3"><a class="rounded-full bg-sky-700 px-5 py-3 font-medium text-white hover:bg-sky-800" href={map} target="_blank" rel="noopener noreferrer">📍 {labels.map}</a><a class="rounded-full border border-sky-700 px-5 py-3 text-sky-800" href={home}>{labels.return}</a></div>
+    <figure class="mt-8 overflow-hidden rounded-2xl border border-sky-100 bg-sky-50">
+      <img src={`/nearby/${slug}.jpg`} alt={detail.imageAlt[lang]} width="1200" height="800" loading="eager" class="max-h-[440px] w-full object-cover" />
+      <figcaption class="px-4 py-3 text-xs text-gray-600">{labels.gallery} · <a class="text-sky-700 underline" href={detail.imageSource} target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></figcaption>
+    </figure>
+    <div class="mt-5 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-sky-50 px-3 py-2 text-sky-900">{visitor.type[lang]}</span><span class="rounded-full bg-sky-50 px-3 py-2 text-sky-900">{moreLabels.visit}: {duration}</span><span class="rounded-full bg-sky-50 px-3 py-2 text-sky-900">{moreLabels.rating}: {moreLabels.unverified}</span></div>
+    <section class="mt-12"><h2 class="text-2xl font-bold text-sky-950">{labels.explore}</h2><p class="mt-4 leading-8 text-gray-700">{value(guide.intro)}</p><h3 class="mt-6 text-xl font-semibold text-sky-950">{moreLabels.tips}</h3><p class="mt-3 leading-8 text-gray-700">{visitor.experience[lang]}</p><h3 class="mt-6 text-xl font-semibold text-sky-950">{labels.highlights}</h3><ul class="mt-3 list-disc space-y-2 pl-6 leading-7 text-gray-700">{guide.highlights[lang].map(item => <li>{item}</li>)}</ul></section>
+    <section class="mt-10 rounded-2xl border border-amber-100 bg-amber-50 p-6"><h2 class="text-2xl font-bold text-sky-950">{labels.about}</h2><p class="mt-4 leading-8 text-gray-700">{detail.management[lang]}</p><p class="mt-4 leading-8 text-gray-700">{value(guide.history)}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.facts}</h2><dl class="mt-4 divide-y rounded-xl border bg-white px-5"><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{labels.location}</dt><dd class="sm:col-span-2">{visitor.address[lang]}</dd></div><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{moreLabels.type}</dt><dd class="sm:col-span-2">{visitor.type[lang]}</dd></div><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{moreLabels.manager}</dt><dd class="sm:col-span-2">{detail.management[lang]}</dd></div><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{labels.time}</dt><dd class="sm:col-span-2">{duration}</dd></div><div class="grid gap-2 py-4 sm:grid-cols-3"><dt class="font-semibold">{moreLabels.rating}</dt><dd class="sm:col-span-2">{moreLabels.unverified}</dd></div></dl></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.hours}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.hours[lang]}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.price}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.admission[lang]}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.transport}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.transport[lang]}</p><p class="mt-3 leading-8 text-gray-700">{value(guide.access)}</p><a class="mt-3 inline-block text-sky-700 underline" href={map} rel="noopener noreferrer" target="_blank">{labels.map}</a></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.highlights}</h2><ol class="mt-4 list-decimal space-y-3 pl-6 leading-7 text-gray-700">{guide.highlights[lang].map(item => <li>{item}</li>)}</ol></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.architecture}</h2><p class="mt-4 leading-8 text-gray-700">{detail.architecture[lang]}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.culture}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.culture[lang]}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.experience}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.experience[lang]}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.route}</h2><ol class="mt-4 list-decimal space-y-3 pl-6 leading-8 text-gray-700">{detail.route[lang].map(step => <li>{step}</li>)}</ol></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.advice}</h2><ul class="mt-4 list-disc space-y-3 pl-6 leading-8 text-gray-700">{visitor.tips[lang].map(tip => <li>{tip}</li>)}</ul></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.photos}</h2><p class="mt-4 leading-8 text-gray-700">{detail.photo[lang]}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.stay}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.stay[lang]}</p></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.reviews}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.review[lang]}</p><a class="mt-3 inline-block font-semibold text-sky-700 underline" href={map} target="_blank" rel="noopener noreferrer">{moreLabels.source}</a></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.faq}</h2><div class="mt-4 space-y-4">{detail.faq[lang].map(item => <div class="rounded-xl border bg-white p-5"><h3 class="font-semibold text-sky-950">{item.q}</h3><p class="mt-2 leading-7 text-gray-700">{item.a}</p></div>)}</div></section>
+    <section class="mt-10"><h2 class="text-2xl font-bold text-sky-950">{labels.near}</h2><div class="mt-4 grid gap-3 sm:grid-cols-3">{Object.entries(nearbyGuides).filter(([key]) => key !== slug).map(([key, item]) => <a class="rounded-xl border bg-white p-4 font-semibold text-sky-800 hover:border-sky-600" href={guideUrl(lang, key as NearbySlug)}>{item.name[lang]} →</a>)}</div></section>
+    <section class="mt-10 rounded-2xl bg-sky-50 p-6"><h2 class="text-2xl font-bold text-sky-950">{moreLabels.directions}</h2><p class="mt-4 leading-8 text-gray-700">{visitor.address[lang]}</p><p class="mt-3 leading-8 text-gray-700">{visitor.transport[lang]}</p><a class="mt-4 inline-block rounded-full bg-sky-700 px-5 py-3 font-semibold text-white" href={map} target="_blank" rel="noopener noreferrer">📍 {labels.map}</a></section>
+    <section class="mt-10 border-t pt-6 text-sm text-gray-600"><h2 class="text-lg font-bold text-sky-950">{labels.sources}</h2><p class="mt-2">{labels.reviewed}</p><ul class="mt-3 list-disc space-y-2 pl-5"><li><a class="text-sky-700 underline" href={detail.managementSource}>Management and public administration reference</a></li><li><a class="text-sky-700 underline" href={guide.source}>Cambodia coastal tourism reference</a></li><li><a class="text-sky-700 underline" href={detail.imageSource}>Location photograph source</a></li><li><a class="text-sky-700 underline" href={map}>Google Maps — {value(guide.name)}</a></li></ul></section>
+  </article>
+</BaseLayout>

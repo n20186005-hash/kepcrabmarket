@@ -1,0 +1,9 @@
+---
+import NearbyDetail from '../../components/NearbyDetail.astro';
+import { nearbyGuides, type NearbySlug } from '../../data/nearbyGuides';
+export function getStaticPaths() {
+  return Object.keys(nearbyGuides).map(slug => ({params:{slug}}));
+}
+const { slug } = Astro.params;
+---
+<NearbyDetail lang="km" slug={slug as NearbySlug} />

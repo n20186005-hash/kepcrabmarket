@@ -24,7 +24,7 @@ const backHref = section === 'privacy' ? './' : '../';
 
     <div class="mt-10 space-y-10">
       {
-        data.body.map((block) => (
+        data.body.map((block: {heading?: string; paragraphs?: string[]; list?: string[]; note?: string}) => (
           <section>
             {block.heading && (
               <h2 class="text-xl font-semibold text-gray-900">{block.heading}</h2>

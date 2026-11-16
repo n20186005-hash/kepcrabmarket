@@ -37,6 +37,8 @@ const langHrefs: Record<string, string> = {
 };
 
 const siteName = messages.header.siteName;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/zh/';
+const anchorPrefix = isHome ? '' : langHrefs[lang];
 ---
 <header class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/85 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
@@ -49,7 +51,7 @@ const siteName = messages.header.siteName;
       {
         primaryNav.map((item) => (
           <a
-            href={item.href}
+            href={`${anchorPrefix}${item.href}`}
             class="whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-gray-700 transition hover:bg-sky-50 hover:text-sky-700"
           >
             {messages.nav[item.key]}
@@ -82,7 +84,7 @@ const siteName = messages.header.siteName;
           {
             moreNav.map((item) => (
               <a
-                href={item.href}
+                href={`${anchorPrefix}${item.href}`}
                 class="block rounded-xl px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-sky-50 hover:text-sky-700"
               >
                 {messages.nav[item.key]}
@@ -114,7 +116,7 @@ const siteName = messages.header.siteName;
       {
         allNav.map((item) => (
           <a
-            href={item.href}
+            href={`${anchorPrefix}${item.href}`}
             class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700"
           >
             {messages.nav[item.key]}
