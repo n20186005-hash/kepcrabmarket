@@ -21,6 +21,9 @@ const pages = [
   { path: 'privacy-policy', priority: '0.3' },
   { path: 'terms-of-service', priority: '0.3' },
   { path: 'cookie-settings', priority: '0.3' },
+  { path: 'sources', priority: '0.4' },
+  { path: 'reviews', priority: '0.4' },
+  { path: 'image-credits', priority: '0.3' },
   // English-only topic pages — advertise only en + x-default so we never point
   // hreflang at km/zh variants that do not exist.
   { path: 'en/crab-prices', priority: '0.6', langs: ['en'] },

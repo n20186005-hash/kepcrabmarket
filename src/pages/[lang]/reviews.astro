@@ -1,0 +1,5 @@
+---
+import InformationPage from '../../components/InformationPage.astro';
+export function getStaticPaths() { return [{ params: { lang: 'en' } }, { params: { lang: 'zh' } }]; }
+---
+<InformationPage section="reviews" />

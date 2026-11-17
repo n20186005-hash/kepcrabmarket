@@ -39,6 +39,14 @@ const langHrefs: Record<string, string> = {
 const siteName = messages.header.siteName;
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/zh/';
 const anchorPrefix = isHome ? '' : langHrefs[lang];
+const prefix = lang === 'km' ? '' : `/${lang}`;
+const infoLabels = {
+  zh: ['游客评价', '资料来源', '图片来源', '隐私政策', '服务条款', 'Cookie 设置'],
+  en: ['Reviews', 'Sources', 'Image credits', 'Privacy policy', 'Terms of service', 'Cookie settings'],
+  km: ['មតិអ្នកទស្សនា', 'ប្រភពព័ត៌មាន', 'ប្រភពរូបភាព', 'គោលការណ៍ឯកជនភាព', 'លក្ខខណ្ឌសេវាកម្ម', 'ការកំណត់ Cookie'],
+};
+const infoPaths = ['reviews', 'sources', 'image-credits', 'privacy-policy', 'terms-of-service', 'cookie-settings'];
+const infoNav = infoPaths.map((path, i) => ({ href: `${prefix}/${path}/`, label: infoLabels[lang as keyof typeof infoLabels][i] }));
 ---
 <header class="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/85 backdrop-blur">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
@@ -91,6 +99,8 @@ const anchorPrefix = isHome ? '' : langHrefs[lang];
               </a>
             ))
           }
+          <div class="my-1 border-t border-gray-100"></div>
+          {infoNav.map((item) => <a href={item.href} class="block rounded-xl px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-sky-50 hover:text-sky-700">{item.label}</a>)}
         </div>
       </div>
     </nav>
@@ -123,6 +133,7 @@ const anchorPrefix = isHome ? '' : langHrefs[lang];
           </a>
         ))
       }
+      {infoNav.map((item) => <a href={item.href} class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700">{item.label}</a>)}
     </div>
   </nav>
 </header>
