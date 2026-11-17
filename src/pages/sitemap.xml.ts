@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { buildAlternates, languagesList } from '../i18n/ui';
 import { nearbyGuides } from '../data/nearbyGuides';
+import { extraKepGuides } from '../data/extraKepGuides';
 import { siteConfig } from '../config/site';
 
 export const prerender = true;
@@ -31,6 +32,7 @@ const pages = [
   { path: 'en/how-to-get-there', priority: '0.6', langs: ['en'] },
   { path: 'en/kep-day-trip-from-kampot', priority: '0.6', langs: ['en'] },
   ...Object.keys(nearbyGuides).map(slug => ({ path: `attractions/${slug}`, priority: '0.7' })),
+  ...Object.keys(extraKepGuides).map(slug => ({ path: `explore/${slug}`, priority: '0.7' })),
 ];
 
 const xmlEscape = (value: string) =>

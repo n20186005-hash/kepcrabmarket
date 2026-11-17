@@ -1,0 +1,7 @@
+---
+import ExtraKepDetail from '../../../components/ExtraKepDetail.astro';
+import { extraKepGuides, type ExtraKepLang, type ExtraKepSlug } from '../../../data/extraKepGuides';
+export function getStaticPaths() { return (['en','zh'] as const).flatMap(lang => Object.keys(extraKepGuides).map(slug => ({params:{lang,slug}}))); }
+const { slug,lang } = Astro.params;
+---
+<ExtraKepDetail lang={lang as ExtraKepLang} slug={slug as ExtraKepSlug}/>
