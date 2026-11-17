@@ -9,7 +9,13 @@ interface Props {
 const { section } = Astro.props;
 const { messages } = getI18n(Astro.url);
 const data = messages.legal[section];
-const backHref = section === 'privacy' ? './' : '../';
+const backHref = Astro.url.pathname.startsWith('/en/') ? '/en/' : Astro.url.pathname.startsWith('/zh/') ? '/zh/' : '/';
+const language = Astro.url.pathname.startsWith('/en/') ? 'en' : Astro.url.pathname.startsWith('/zh/') ? 'zh' : 'km';
+const controls = {
+  zh: { label: '允许匿名访问统计（Google Analytics）', save: '保存偏好设置', reject: '拒绝分析型 Cookie', saved: '设置已保存。', status: '当前选择：' },
+  en: { label: 'Allow anonymous visit analytics (Google Analytics)', save: 'Save preferences', reject: 'Reject analytics cookies', saved: 'Preferences saved.', status: 'Current choice: ' },
+  km: { label: 'អនុញ្ញាតឱ្យវិភាគចំនួនអ្នកចូលមើល (Google Analytics)', save: 'រក្សាទុកជម្រើស', reject: 'បដិសេធ Cookie វិភាគ', saved: 'បានរក្សាទុកជម្រើស។', status: 'ជម្រើសបច្ចុប្បន្ន៖ ' },
+}[language as 'zh'|'en'|'km'];
 ---
 
 <BaseLayout title={data.title} description={data.title}>
@@ -51,8 +57,39 @@ const backHref = section === 'privacy' ? './' : '../';
       }
     </div>
 
+    {section === 'cookie' && (
+      <section class="mt-10 rounded-xl border border-sky-200 bg-sky-50 p-5" aria-label={data.title}>
+        <label class="flex cursor-pointer items-start gap-3 font-medium text-sky-950">
+          <input id="analytics-consent" type="checkbox" class="mt-1 h-5 w-5 accent-sky-700" />
+          <span>{controls.label}</span>
+        </label>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <button id="save-consent" type="button" class="rounded-lg bg-sky-800 px-5 py-2.5 font-semibold text-white hover:bg-sky-900">{controls.save}</button>
+          <button id="reject-consent" type="button" class="rounded-lg border border-sky-700 px-5 py-2.5 font-semibold text-sky-900 hover:bg-white">{controls.reject}</button>
+        </div>
+        <p id="consent-status" role="status" aria-live="polite" class="mt-3 text-sm text-sky-900"></p>
+      </section>
+    )}
+
     <p class="mt-12 text-sm text-gray-500">
       <a href={backHref} class="text-sky-700 hover:underline">←</a>
     </p>
   </article>
+  {section === 'cookie' && (
+    <script is:inline define:vars={{ controls }}>
+      const toggle = document.getElementById('analytics-consent');
+      const status = document.getElementById('consent-status');
+      const key = 'kep-cookie-analytics-consent';
+      let current = 'denied';
+      try { current = localStorage.getItem(key) || 'denied'; } catch (e) {}
+      toggle.checked = current === 'granted';
+      const save = (allowed) => {
+        toggle.checked = allowed;
+        if (typeof window.kepAnalyticsConsent === 'function') window.kepAnalyticsConsent(allowed);
+        status.textContent = controls.saved;
+      };
+      document.getElementById('save-consent').addEventListener('click', () => save(toggle.checked));
+      document.getElementById('reject-consent').addEventListener('click', () => save(false));
+    </script>
+  )}
 </BaseLayout>

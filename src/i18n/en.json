@@ -1066,7 +1066,7 @@
     "intro": "This is a non-commercial, independent information guide. We are not affiliated with any vendor, business, or government body in Kep.",
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: 17 November 2026",
       "body": [
         {
           "heading": "Information we collect",
@@ -1090,7 +1090,7 @@
         {
           "heading": "Third-party services",
           "paragraphs": [
-            "Our website may use third-party services such as Google Maps (for embedded maps and location data), Google Analytics (for traffic analysis), and Unsplash (for images). These services have their own privacy policies."
+            "The site links to Google Maps. Google Analytics is loaded only when you opt in to analytics cookies. Third-party websites have their own privacy policies."
           ]
         },
         {
@@ -1109,7 +1109,7 @@
     },
     "terms": {
       "title": "Terms of Service",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: 17 November 2026",
       "body": [
         {
           "heading": "Access and use",
@@ -1132,7 +1132,7 @@
         {
           "heading": "Intellectual property",
           "paragraphs": [
-            "The design and original content of this website are protected by copyright. Images are sourced from Unsplash and used under its licence. Use of Google Maps data complies with Google's Terms of Service."
+            "Original site text and design are protected as applicable. Photographs remain the property and copyright of their original photographers. See our dedicated Sources page for references and map links."
           ]
         },
         {
@@ -1145,7 +1145,7 @@
     },
     "cookie": {
       "title": "Cookie Settings",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: 17 November 2026",
       "body": [
         {
           "paragraphs": [
@@ -1165,7 +1165,7 @@
             "They help us understand how visitors interact with our website by collecting anonymous usage data."
           ],
           "list": [
-            "Google Analytics — Active. It collects anonymous information about how visitors use our website."
+            "Google Analytics — disabled by default. It loads only after you opt in; you can withdraw consent here at any time."
           ]
         },
         {
@@ -1174,7 +1174,7 @@
             "They remember your settings, such as language and theme preferences."
           ],
           "list": [
-            "User preferences — Active. Saves your language preference and site settings."
+            "Local browser storage remembers your analytics choice. Language is selected through the page URL."
           ]
         },
         {
@@ -1191,7 +1191,7 @@
           "paragraphs": [
             "You can change your cookie settings at any time. Please note that disabling certain cookies may affect the functionality of the website."
           ],
-          "note": "Save preferences · Reject all"
+          "note": "Use the buttons below to save or reject analytics cookies."
         }
       ]
     }

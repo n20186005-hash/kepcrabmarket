@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl } from '../i18n/ui';
+import { getLangFromUrl, localisedUrl } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
 const lines = {
@@ -8,10 +8,21 @@ const lines = {
   km: ['© 2026 ផ្សារក្តាមកែប · រក្សាសិទ្ធិគ្រប់យ៉ាង', 'គេហទំព័រនេះជាគម្រោងព័ត៌មានទេសចរណ៍ឯករាជ្យ។ យើងមិនមានទំនាក់ទំនងជាមួយស្ថាប័នរដ្ឋាភិបាល ឬអង្គការផ្លូវការណាមួយឡើយ។'],
 };
 const [copyright, disclaimer] = lines[lang as keyof typeof lines];
+const links = {
+  zh: ['隐私政策', '服务条款', 'Cookie 设置'],
+  en: ['Privacy Policy', 'Terms of Service', 'Cookie Settings'],
+  km: ['គោលការណ៍ឯកជនភាព', 'លក្ខខណ្ឌសេវាកម្ម', 'ការកំណត់ Cookie'],
+}[lang as 'zh' | 'en' | 'km'];
+const paths = ['privacy-policy', 'terms-of-service', 'cookie-settings'];
 ---
 <footer class="mt-8 bg-sky-950 text-sky-50">
-  <div class="mx-auto max-w-6xl px-4 py-7 text-sm leading-relaxed text-sky-100/85">
-    <p>{copyright}</p>
-    <p class="mt-2">{disclaimer}</p>
+  <div class="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-7 text-sm leading-relaxed text-sky-100/85 md:flex-row md:items-start md:justify-between">
+    <div>
+      <p>{copyright}</p>
+      <p class="mt-2">{disclaimer}</p>
+    </div>
+    <nav aria-label="Legal" class="flex shrink-0 flex-wrap gap-x-5 gap-y-2 md:justify-end md:text-right">
+      {paths.map((path, index) => <a class="underline-offset-4 transition hover:text-white hover:underline" href={localisedUrl(lang, path)}>{links[index]}</a>)}
+    </nav>
   </div>
 </footer>
